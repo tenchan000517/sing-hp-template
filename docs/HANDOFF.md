@@ -44,11 +44,13 @@
 ### 主要コマンド
 
 ```bash
-npm run dev      # 開発サーバー起動
+npm run dev      # 開発サーバー起動（Webpack使用）
 npm run build    # ビルド
 npm run start    # 本番サーバー起動
 npm run lint     # Lint
 ```
+
+> **Note**: 開発サーバーは`--webpack`フラグを使用しています。これはWSL2からWindowsファイルシステム上で実行する際のTurbopackの互換性問題を回避するためです。
 
 ---
 
@@ -58,9 +60,9 @@ npm run lint     # Lint
 |----|------|------|---------|------|
 | `story-type` | ストーリー型 | ✅ 実装済 | 7ページ | 社員インタビュー重視、共感採用 |
 | `data-driven` | データ訴求型 | ✅ 実装済 | 7ページ | 数字・実績重視、グラフ活用 |
-| `visual` | ビジュアル型 | ✅ 実装済 | 7ページ | 写真・動画重視、没入感 |
-| `simple` | シンプル型 | ⏳ 未実装 | - | ミニマルデザイン、高速表示 |
-| `interactive` | インタラクティブ型 | ⏳ 未実装 | - | 参加型コンテンツ、適性診断 |
+| `visual` | ビジュアル型 | ✅ 実装済 | 9ページ | 写真・動画重視、没入感 |
+| `simple` | シンプル型 | ✅ 実装済 | 1ページ | ミニマルデザイン、1ページ完結 |
+| `qa-type` | Q&A解決型 | ✅ 実装済 | 7ページ | 不安解消、FAQ重視 |
 
 ### story-type（ストーリー型）
 
@@ -99,6 +101,48 @@ npm run lint     # Lint
 | `/templates/visual/jobs` | JOBS（募集職種） |
 | `/templates/visual/jobs/[id]` | 職種詳細ページ |
 | `/templates/visual/entry` | ENTRY（応募フォーム） |
+
+### simple（シンプル型）- NEW
+
+**1ページ完結型のミニマルテンプレート**
+
+| セクション | 説明 |
+|-----------|------|
+| MinimalHero | フルスクリーンヒーロー |
+| CompanySection | 会社概要 |
+| JobsAccordion | 募集職種（アコーディオン） |
+| BenefitsGrid | 福利厚生 |
+| FAQAccordion | よくある質問 |
+| CEOMessage | 代表メッセージ |
+| SimpleForm | 応募フォーム |
+
+**実装済ファイル:**
+- `src/data/simple/sample.ts`
+- `src/app/templates/simple/layout.tsx`
+- `src/app/templates/simple/page.tsx`
+- `src/components/templates/simple/` (7コンポーネント)
+
+### qa-type（Q&A解決型）
+
+**求職者の不安を徹底解消するQ&A重視テンプレート**
+
+| パス | ページ名 |
+|------|---------|
+| `/templates/qa-type` | HOME（不安TOP5） |
+| `/templates/qa-type/before-apply` | 応募前の疑問 |
+| `/templates/qa-type/selection` | 選考について |
+| `/templates/qa-type/after-joining` | 入社後について |
+| `/templates/qa-type/workstyle` | 働き方Q&A |
+| `/templates/qa-type/jobs` | 募集要項 |
+| `/templates/qa-type/contact` | まだ不安がある方へ |
+
+**設計書:** `docs/templates/06-qa-type.md`
+
+**実装済ファイル:**
+- `src/data/qa-type/sample.ts`
+- `src/app/templates/qa-type/layout.tsx`
+- `src/app/templates/qa-type/page.tsx` + 各サブページ
+- `src/components/templates/qa-type/` (10コンポーネント)
 
 ### テンプレート定義場所
 `src/lib/constants.ts` の `templates` 配列と `navigation` オブジェクト
@@ -159,8 +203,18 @@ sing-hp-template/
 │   │       │   ├── jobs/page.tsx
 │   │       │   ├── jobs/[id]/page.tsx
 │   │       │   └── entry/page.tsx
-│   │       ├── simple/            # ⏳ 未実装
-│   │       └── interactive/       # ⏳ 未実装
+│   │       ├── simple/            # ✅ 実装済（1ページ完結型）
+│   │       │   ├── layout.tsx
+│   │       │   └── page.tsx
+│   │       └── qa-type/           # ✅ 実装済
+│   │           ├── layout.tsx
+│   │           ├── page.tsx
+│   │           ├── before-apply/page.tsx
+│   │           ├── selection/page.tsx
+│   │           ├── after-joining/page.tsx
+│   │           ├── workstyle/page.tsx
+│   │           ├── jobs/page.tsx
+│   │           └── contact/page.tsx
 │   ├── components/
 │   │   ├── common/
 │   │   │   ├── Button.tsx
@@ -182,20 +236,43 @@ sing-hp-template/
 │   │       │   ├── JobsTable.tsx
 │   │       │   ├── FAQSection.tsx
 │   │       │   └── ...
-│   │       └── visual/            # ビジュアル型専用コンポーネント
-│   │           ├── VideoHero.tsx
-│   │           ├── PhotoGrid.tsx
-│   │           ├── KeywordSection.tsx
-│   │           ├── VideoInterview.tsx
-│   │           ├── CTABanner.tsx
-│   │           ├── GalleryFilter.tsx
-│   │           ├── MemberCard.tsx
-│   │           ├── JobCard.tsx
-│   │           └── ...
+│   │       ├── visual/            # ビジュアル型専用コンポーネント
+│   │       │   ├── VideoHero.tsx
+│   │       │   ├── PhotoGrid.tsx
+│   │       │   ├── KeywordSection.tsx
+│   │       │   ├── VideoInterview.tsx
+│   │       │   ├── CTABanner.tsx
+│   │       │   ├── GalleryFilter.tsx
+│   │       │   ├── MemberCard.tsx
+│   │       │   ├── JobCard.tsx
+│   │       │   └── ...
+│   │       ├── simple/            # シンプル型専用コンポーネント（✅ 実装済）
+│   │       │   ├── MinimalHero.tsx
+│   │       │   ├── CompanySection.tsx
+│   │       │   ├── JobsAccordion.tsx
+│   │       │   ├── BenefitsGrid.tsx
+│   │       │   ├── FAQAccordion.tsx
+│   │       │   ├── SimpleForm.tsx
+│   │       │   ├── CEOMessage.tsx
+│   │       │   └── index.ts
+│   │       └── qa-type/           # Q&A解決型専用コンポーネント（✅ 実装済）
+│   │           ├── AnxietyHero.tsx
+│   │           ├── Top5Accordion.tsx
+│   │           ├── CategoryNavigation.tsx
+│   │           ├── SeniorVoices.tsx
+│   │           ├── QASection.tsx
+│   │           ├── SelectionFlow.tsx
+│   │           ├── OnboardingTimeline.tsx
+│   │           ├── ConsultationSection.tsx
+│   │           ├── FinalMessage.tsx
+│   │           ├── PageHero.tsx
+│   │           └── index.ts
 │   ├── data/
 │   │   ├── story-type/sample.ts
 │   │   ├── data-driven/sample.ts
-│   │   └── visual/sample.ts
+│   │   ├── visual/sample.ts
+│   │   ├── simple/sample.ts       # ✅ 実装済
+│   │   └── qa-type/sample.ts      # ✅ 実装済
 │   └── lib/
 │       ├── constants.ts
 │       └── seo.tsx
@@ -381,7 +458,7 @@ import CountUp from "@/components/animations/CountUp";
 | data-driven | #1565C0 (青) | #FFC107 (金) |
 | simple | #424242 (グレー) | #000000 (黒) |
 | visual | #7B1FA2 (紫) | #E91E63 (ピンク) |
-| interactive | #E65100 (オレンジ) | #00BCD4 (シアン) |
+| qa-type | #4CAF50 (緑) | #FF9800 (オレンジ) |
 
 ---
 
@@ -490,6 +567,38 @@ npm run dev
 - [Framer Motion](https://www.framer.com/motion/)
 - [Recharts](https://recharts.org/)
 - [Lucide Icons](https://lucide.dev/icons/)
+
+---
+
+## 10. 次のセッションへの引き継ぎ (TODO)
+
+### 完了した作業
+- [x] ストーリー型（story-type）実装
+- [x] データ訴求型（data-driven）実装
+- [x] ビジュアル型（visual）実装
+- [x] シンプル型（simple）実装
+- [x] Q&A解決型（qa-type）実装 ← **今回完了**
+
+### 全テンプレート実装完了
+
+5種類すべてのテンプレートが実装済みです。
+
+```bash
+npm run dev
+# http://localhost:3000 でテンプレート一覧を確認
+# http://localhost:3000/templates/story-type
+# http://localhost:3000/templates/data-driven
+# http://localhost:3000/templates/visual
+# http://localhost:3000/templates/simple
+# http://localhost:3000/templates/qa-type
+```
+
+### 今後の改善案（オプション）
+
+1. **画像の追加**: 各テンプレートに実際のサンプル画像を追加
+2. **カスタマイズガイド**: 企業がテンプレートをカスタマイズする際のガイド作成
+3. **パフォーマンス最適化**: 画像最適化、コード分割の検討
+4. **アクセシビリティ**: WCAG対応の強化
 
 ---
 
