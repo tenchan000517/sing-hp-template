@@ -43,31 +43,29 @@ export default function TemplateCard({
             : "opacity-75"
         }`}
       >
-        {/* Color accent bar */}
+        {/* Color Header */}
         <div
-          className="h-2 w-full"
+          className="px-6 py-4"
           style={{ backgroundColor: color }}
-        />
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-white">
+                {name}
+              </h3>
+              <p className="text-sm text-white/80">
+                {subtitle}
+              </p>
+            </div>
+            {!isAvailable && (
+              <span className="px-3 py-1 text-xs font-medium bg-white/20 text-white rounded-full">
+                Coming Soon
+              </span>
+            )}
+          </div>
+        </div>
 
         <div className="p-6">
-          {/* Status badge */}
-          {!isAvailable && (
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full mb-4">
-              Coming Soon
-            </span>
-          )}
-
-          {/* Title */}
-          <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-1">
-            {name}
-          </h3>
-          <p
-            className="text-sm font-medium mb-3"
-            style={{ color }}
-          >
-            {subtitle}
-          </p>
-
           {/* Description */}
           <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4">
             {description}
@@ -90,14 +88,13 @@ export default function TemplateCard({
 
           {/* CTA */}
           {isAvailable ? (
-            <Link
-              href={href}
+            <div
               className="inline-flex items-center gap-2 font-medium transition-colors"
               style={{ color }}
             >
               <span>テンプレートを見る</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </div>
           ) : (
             <span className="inline-flex items-center gap-2 text-gray-400 font-medium">
               <span>準備中</span>
