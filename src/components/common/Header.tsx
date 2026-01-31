@@ -11,7 +11,7 @@ import Button from "./Button";
 interface HeaderProps {
   companyName: string;
   applyUrl?: string;
-  templateType?: "story-type" | "data-driven" | "visual";
+  templateType?: "story-type" | "data-driven" | "visual" | "qa-type";
 }
 
 export default function Header({
@@ -23,12 +23,16 @@ export default function Header({
     ? navigation.dataDriven
     : templateType === "visual"
     ? navigation.visual
+    : templateType === "qa-type"
+    ? navigation.qaType
     : navigation.storyType;
 
   const defaultApplyUrl = templateType === "data-driven"
     ? "/templates/data-driven/apply"
     : templateType === "visual"
     ? "/templates/visual/entry"
+    : templateType === "qa-type"
+    ? "/templates/qa-type/contact"
     : "/templates/story-type/apply";
 
   const finalApplyUrl = applyUrl || defaultApplyUrl;
@@ -36,6 +40,8 @@ export default function Header({
     ? "/templates/data-driven"
     : templateType === "visual"
     ? "/templates/visual"
+    : templateType === "qa-type"
+    ? "/templates/qa-type"
     : "/templates/story-type";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
