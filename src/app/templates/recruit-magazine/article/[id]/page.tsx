@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Header, Footer } from "../../_components/Layout";
 import { articles } from "@/data/recruit-magazine/sample";
 
@@ -15,6 +16,7 @@ type ArticleContent = {
     position: string;
     joinYear: string;
     message: string;
+    image?: string;
   };
   schedule?: {
     time: string;
@@ -142,7 +144,16 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                 <div className="mt-16 bg-gray-50 p-8">
                   <h3 className="text-sm font-bold tracking-widest text-gray-500 mb-4">PROFILE</h3>
                   <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 bg-gray-300 rounded-full flex-shrink-0" />
+                    <div className="w-20 h-20 rounded-full flex-shrink-0 relative overflow-hidden bg-gray-300">
+                      {article.content.profile.image && (
+                        <Image
+                          src={article.content.profile.image}
+                          alt={article.content.profile.name}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
                     <div>
                       <p className="font-bold text-xl">{article.content.profile.name}</p>
                       <p className="text-sm text-gray-500 mb-3">
