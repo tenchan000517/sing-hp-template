@@ -2,110 +2,117 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import Image from "next/image";
+import { Search, Bookmark, Heart } from "lucide-react";
 
 interface TemplateCardProps {
   id: string;
   name: string;
   subtitle: string;
   description: string;
-  features: readonly string[];
   color: string;
   href: string;
+  image: string;
   status: "available" | "coming-soon";
   index: number;
+  company?: string;
+  date?: string;
 }
 
 export default function TemplateCard({
   name,
   subtitle,
-  description,
-  features,
   color,
   href,
+  image,
   status,
   index,
+  company,
+  date,
 }: TemplateCardProps) {
   const isAvailable = status === "available";
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="h-full"
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="group"
     >
       <div
-        className={`relative h-full bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 ${
+        className={`relative bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 ${
           isAvailable
-            ? "hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-            : "opacity-75"
+            ? "hover:shadow-lg cursor-pointer"
+            : "opacity-60"
         }`}
       >
-        {/* Color Header */}
-        <div
-          className="px-6 py-4"
-          style={{ backgroundColor: color }}
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-white">
-                {name}
+        {/* Image Container */}
+        <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+
+          {/* Color accent bar */}
+          <div
+            className="absolute top-0 left-0 right-0 h-1"
+            style={{ backgroundColor: color }}
+          />
+
+          {/* Status badge */}
+          {!isAvailable && (
+            <div className="absolute top-3 right-3">
+              <span className="px-2 py-1 text-xs font-medium bg-black/60 text-white rounded">
+                Coming Soon
+              </span>
+            </div>
+          )}
+
+          {/* Hover overlay */}
+          {isAvailable && (
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="p-4">
+          <div className="flex items-start justify-between gap-2">
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold text-[var(--color-text-primary)] truncate">
+                {company || name}
               </h3>
-              <p className="text-sm text-white/80">
+              <p className="text-sm text-[var(--color-text-secondary)] truncate">
                 {subtitle}
               </p>
             </div>
-            {!isAvailable && (
-              <span className="px-3 py-1 text-xs font-medium bg-white/20 text-white rounded-full">
-                Coming Soon
+          </div>
+
+          {/* Footer */}
+          <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+            <div className="flex items-center gap-1">
+              <span
+                className="px-2 py-0.5 text-xs font-medium rounded"
+                style={{ backgroundColor: `${color}15`, color: color }}
+              >
+                {name}
+              </span>
+            </div>
+            {date && (
+              <span className="text-xs text-[var(--color-text-muted)]">
+                {date}
               </span>
             )}
           </div>
         </div>
 
-        <div className="p-6">
-          {/* Description */}
-          <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4">
-            {description}
-          </p>
-
-          {/* Features */}
-          <ul className="space-y-2 mb-6">
-            {features.map((feature, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm">
-                <Check
-                  className="w-4 h-4 mt-0.5 flex-shrink-0"
-                  style={{ color }}
-                />
-                <span className="text-[var(--color-text-secondary)]">
-                  {feature}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA */}
-          {isAvailable ? (
-            <div
-              className="inline-flex items-center gap-2 font-medium transition-colors"
-              style={{ color }}
-            >
-              <span>テンプレートを見る</span>
-              <ArrowRight className="w-4 h-4" />
-            </div>
-          ) : (
-            <span className="inline-flex items-center gap-2 text-gray-400 font-medium">
-              <span>準備中</span>
-            </span>
-          )}
-        </div>
-
-        {/* Hover overlay for available templates */}
+        {/* Link overlay */}
         {isAvailable && (
           <Link href={href} className="absolute inset-0">
-            <span className="sr-only">{name}テンプレートを見る</span>
+            <span className="sr-only">{name}を見る</span>
           </Link>
         )}
       </div>
