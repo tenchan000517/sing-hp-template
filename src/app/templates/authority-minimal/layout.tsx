@@ -1,5 +1,5 @@
-
 import type { Metadata } from "next";
+import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
     title: "三河精密工業株式会社 | 精密金属部品加工",
@@ -12,8 +12,11 @@ export default function AuthorityMinimalLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div data-template="authority-minimal" className="min-h-screen bg-white font-sans text-[#333]">
-            {children}
-        </div>
+        <>
+            <BackToTopBar />
+            <div data-template="authority-minimal" className="min-h-screen bg-white font-sans text-[#333]">
+                {children}
+            </div>
+        </>
     );
 }

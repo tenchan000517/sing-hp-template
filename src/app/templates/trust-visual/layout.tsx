@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { company } from "@/data/trust-visual/sample";
+import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
   title: {
@@ -14,5 +15,10 @@ export default function TrustVisualLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BackToTopBar />
+      {children}
+    </>
+  );
 }

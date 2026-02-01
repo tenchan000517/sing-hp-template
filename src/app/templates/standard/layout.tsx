@@ -1,5 +1,5 @@
-
 import type { Metadata } from "next";
+import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
     title: "三河精密工業株式会社 | 精密金属部品加工",
@@ -12,19 +12,22 @@ export default function StandardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div
-            data-template="standard"
-            className="min-h-screen bg-white font-sans text-[#333]"
-            style={{
-                "--color-primary": "#1E3A5F",
-                "--color-primary-light": "#2C5282",
-                "--color-primary-dark": "#152a45",
-                "--color-accent": "#F39C12",
-                "--color-accent-light": "#F6AD55",
-                "--color-bg-secondary": "#F5F7FA",
-            } as React.CSSProperties}
-        >
-            {children}
-        </div>
+        <>
+            <BackToTopBar />
+            <div
+                data-template="standard"
+                className="min-h-screen bg-white font-sans text-[#333]"
+                style={{
+                    "--color-primary": "#1E3A5F",
+                    "--color-primary-light": "#2C5282",
+                    "--color-primary-dark": "#152a45",
+                    "--color-accent": "#F39C12",
+                    "--color-accent-light": "#F6AD55",
+                    "--color-bg-secondary": "#F5F7FA",
+                } as React.CSSProperties}
+            >
+                {children}
+            </div>
+        </>
     );
 }

@@ -227,7 +227,7 @@ export const lawyers = [
     name: "田中 裕子",
     nameKana: "たなか ゆうこ",
     position: "代表弁護士",
-    photo: "/images/templates/trust-visual/ceo.jpg",
+    photo: "/images/templates/trust-visual/customers/customer-05.jpg",
     registrationYear: 2000,
     experience: 25,
     barNumber: "愛知県弁護士会 第12345号",
@@ -257,7 +257,7 @@ export const lawyers = [
     name: "鈴木 美咲",
     nameKana: "すずき みさき",
     position: "アソシエイト弁護士",
-    photo: "/images/templates/trust-visual/customers/customer-03.jpg",
+    photo: "/images/templates/trust-visual/customers/customer-02.jpg",
     registrationYear: 2018,
     experience: 7,
     barNumber: "愛知県弁護士会 第34567号",
@@ -347,7 +347,7 @@ export const media = [
 // 代表メッセージ
 export const ceoMessage = {
   heading: "ご挨拶",
-  photo: "/images/templates/trust-visual/ceo.jpg",
+  photo: "/images/templates/trust-visual/customers/customer-05.jpg",
   message: `「弁護士に相談するのは敷居が高い」「費用がいくらかかるか分からない」
 
 そんな声をよく耳にします。しかし、法律問題は早めに相談することで、より良い解決につながることが多いのです。

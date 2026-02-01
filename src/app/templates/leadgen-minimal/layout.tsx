@@ -1,5 +1,5 @@
-
 import type { Metadata } from "next";
+import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
     title: "株式会社リードグロース | BtoBマーケティング支援",
@@ -12,8 +12,11 @@ export default function LeadgenMinimalLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div data-template="leadgen-minimal" className="min-h-screen bg-white font-sans text-slate-800">
-            {children}
-        </div>
+        <>
+            <BackToTopBar />
+            <div data-template="leadgen-minimal" className="min-h-screen bg-white font-sans text-slate-800">
+                {children}
+            </div>
+        </>
     );
 }

@@ -1,5 +1,5 @@
-
 import type { Metadata } from "next";
+import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
     title: "MEISTER'S LIFE | 三河精密工業 採用サイト",
@@ -12,18 +12,21 @@ export default function RecruitMagazineLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div
-            data-template="recruit-magazine"
-            className="min-h-screen font-serif text-[#2d3748]"
-            style={{
-                "--color-primary": "#2d3748",
-                "--color-primary-light": "#4a5568",
-                "--color-accent": "#e53e3e",
-                "--color-bg-base": "#FAF9F6",
-                "--color-bg-paper": "#ffffff",
-            } as React.CSSProperties}
-        >
-            {children}
-        </div>
+        <>
+            <BackToTopBar />
+            <div
+                data-template="recruit-magazine"
+                className="min-h-screen font-serif text-[#2d3748]"
+                style={{
+                    "--color-primary": "#2d3748",
+                    "--color-primary-light": "#4a5568",
+                    "--color-accent": "#e53e3e",
+                    "--color-bg-base": "#FAF9F6",
+                    "--color-bg-paper": "#ffffff",
+                } as React.CSSProperties}
+            >
+                {children}
+            </div>
+        </>
     );
 }
