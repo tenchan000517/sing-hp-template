@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { recruit } from '@/data/standard/sample';
 
@@ -32,8 +33,13 @@ export default function RecruitPage() {
                 {/* Hero */}
                 <section className="relative py-32 bg-[var(--color-primary-dark)] text-white overflow-hidden">
                     <div className="absolute inset-0 bg-black/50 z-10"></div>
-                    <div className="absolute inset-0 z-0 bg-gray-800">
-                        {/* Image Placeholder */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/images/templates/standard/generated/team_photo.jpg"
+                            alt="採用情報"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
                     <div className="container mx-auto px-6 relative z-20 text-center max-w-3xl">
                         <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
@@ -66,13 +72,21 @@ export default function RecruitPage() {
                     <div className="container mx-auto px-6">
                         <h2 className="text-2xl font-bold mb-16 text-[var(--color-primary)] text-center">社員インタビュー</h2>
                         <div className="grid md:grid-cols-3 gap-12">
-                            {recruit.members.map((member, idx) => (
+                            {recruit.members.map((member, idx) => {
+                                const memberImages = [
+                                    '/images/templates/standard/generated/interview_young.jpg',
+                                    '/images/templates/standard/generated/interview_midcareer.jpg',
+                                    '/images/templates/standard/generated/mentoring_scene.jpg'
+                                ];
+                                return (
                                 <div key={idx} className="bg-white rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="aspect-square bg-gray-200 relative">
-                                        {/* Photo Placeholder */}
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
-                                            Member Photo
-                                        </div>
+                                    <div className="aspect-square relative">
+                                        <Image
+                                            src={memberImages[idx % memberImages.length]}
+                                            alt={member.name}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <div className="p-8">
                                         <p className="text-sm font-bold text-[var(--color-accent)] mb-2">{member.position}</p>
@@ -82,7 +96,8 @@ export default function RecruitPage() {
                                         </p>
                                     </div>
                                 </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </section>

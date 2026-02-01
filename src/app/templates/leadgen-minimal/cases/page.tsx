@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { works } from '@/data/leadgen-minimal/sample';
 
@@ -26,10 +27,12 @@ export default function LeadgenMinimalCasesPage() {
                             {works.map((work) => (
                                 <div key={work.id} className="group cursor-pointer">
                                     <div className="aspect-[4/3] bg-gray-100 mb-6 overflow-hidden relative rounded-sm">
-                                        <div className="absolute inset-0 bg-gray-200 transition-transform duration-700 group-hover:scale-105" />
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold opacity-50">
-                                            IMAGE: {work.title}
-                                        </div>
+                                        <Image
+                                            src={work.image}
+                                            alt={work.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
                                     </div>
                                     <div className="border-l-2 border-[var(--color-accent)] pl-4">
                                         <h3 className="text-xl font-bold text-[var(--color-primary)] mb-2 group-hover:text-[var(--color-accent)] transition-colors">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Layout, { CTASection } from "../_components/Layout";
 import { processTypes, specs, qualityFlow } from "@/data/fullorder/sample";
 
@@ -42,14 +43,13 @@ function ProcessTypesSection() {
               }`}
             >
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={2} />
-                      <circle cx="8.5" cy="8.5" r="1.5" strokeWidth={2} />
-                      <path strokeWidth={2} d="M21 15l-5-5L5 21" />
-                    </svg>
-                  </div>
+                <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden relative">
+                  <Image
+                    src={process.image}
+                    alt={process.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 

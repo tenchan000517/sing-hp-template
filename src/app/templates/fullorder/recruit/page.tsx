@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "../_components/Layout";
 import {
   recruitConcept,
@@ -132,12 +133,13 @@ function InterviewsSection() {
               }`}
             >
               <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
+                <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden relative">
+                  <Image
+                    src={interview.photo}
+                    alt={interview.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 

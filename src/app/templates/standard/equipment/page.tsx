@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 
 const equipmentList = [
@@ -50,14 +51,23 @@ export default function EquipmentPage() {
                 <section className="py-24 bg-white">
                     <div className="container mx-auto px-6">
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Photo Gallery Placeholders */}
-                            {[1, 2, 3, 4, 5, 6].map((i) => (
-                                <div key={i} className="aspect-[4/3] bg-gray-200 rounded relative overflow-hidden group">
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
-                                        Machine Photo {i}
-                                    </div>
+                            {[
+                                { image: '/images/templates/standard/generated/construction_wide.jpg', name: '建設現場' },
+                                { image: '/images/templates/standard/generated/cad_operation.jpg', name: 'CAD設計' },
+                                { image: '/images/templates/standard/generated/inspection_work.jpg', name: '品質検査' },
+                                { image: '/images/templates/standard/generated/completed_building_sky.jpg', name: '完成建物' },
+                                { image: '/images/templates/standard/generated/renovation_interior.jpg', name: 'リノベーション' },
+                                { image: '/images/templates/standard/generated/project_house.jpg', name: '住宅建築' },
+                            ].map((item, i) => (
+                                <div key={i} className="aspect-[4/3] rounded relative overflow-hidden group">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.name}
+                                        fill
+                                        className="object-cover"
+                                    />
                                     <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-                                        <p className="text-white text-sm font-bold">設備名称サンプル {i}</p>
+                                        <p className="text-white text-sm font-bold">{item.name}</p>
                                     </div>
                                 </div>
                             ))}

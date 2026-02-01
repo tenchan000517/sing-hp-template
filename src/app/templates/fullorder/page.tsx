@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Layout, { CTASection } from "./_components/Layout";
 import {
   hero,
@@ -13,7 +14,6 @@ import {
 function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#2C3E50]">
-      {/* 背景画像（プレースホルダー） */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#2C3E50]/90 to-[#2C3E50]/70" />
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
@@ -195,14 +195,13 @@ function EquipmentSection() {
               key={equip.id}
               className="group"
             >
-              <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden mb-4">
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={2} />
-                    <circle cx="8.5" cy="8.5" r="1.5" strokeWidth={2} />
-                    <path strokeWidth={2} d="M21 15l-5-5L5 21" />
-                  </svg>
-                </div>
+              <div className="aspect-[4/3] bg-gray-200 rounded overflow-hidden mb-4 relative">
+                <Image
+                  src={equip.image}
+                  alt={equip.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="font-bold text-[#2C3E50] mb-1">{equip.name}</h3>
               <p className="text-sm text-gray-500 mb-1">{equip.model}</p>
@@ -241,7 +240,6 @@ function EquipmentSection() {
 function RecruitSection() {
   return (
     <section className="relative py-32 bg-[#2C3E50]">
-      {/* 背景画像（プレースホルダー） */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{

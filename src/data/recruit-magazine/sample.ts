@@ -126,7 +126,8 @@ export const articles = [
                 name: "佐々木 美香",
                 position: "総務部",
                 joinYear: "入社8年目",
-                message: "仕事も趣味も諦めない。それが私のモットーです。"
+                message: "仕事も趣味も諦めない。それが私のモットーです。",
+                image: "/images/templates/recruit-magazine/interview-sasaki.jpg"
             },
             schedule: [
                 { time: "8:30", activity: "出社、メールチェック、1日のタスク整理" },

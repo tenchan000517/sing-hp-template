@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { articles } from '@/data/recruit-magazine/sample';
 
@@ -19,9 +20,13 @@ export default function CulturePage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {cultureArticles.map((article) => (
                             <Link key={article.id} href={`/templates/recruit-magazine/article/${article.id}`} className="bg-white p-4 shadow-sm border border-gray-100 group cursor-pointer rotate-1 hover:rotate-0 transition-transform duration-300 block">
-                                <div className="aspect-square bg-gray-200 mb-4 relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-105"></div>
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">Event Photo</div>
+                                <div className="aspect-square relative overflow-hidden mb-4">
+                                    <Image
+                                        src={article.image}
+                                        alt={article.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
                                 </div>
                                 <h2 className="text-xl font-bold font-serif mb-2 group-hover:text-[var(--color-accent)] transition-colors whitespace-pre-line">
                                     {article.title}

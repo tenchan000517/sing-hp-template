@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { specs, qualityFlow, orderFlow, faq } from '@/data/authority-minimal/sample';
 
@@ -60,9 +61,13 @@ export default function ServicePage() {
                         </div>
 
                         <div className="mt-12 bg-white p-8 md:flex gap-8 items-center border-l-4 border-[var(--color-accent)]">
-                            <div className="w-full md:w-1/3 aspect-video bg-gray-200 shrink-0">
-                                {/* Image Placeholder: Quality */}
-                                <div className="w-full h-full flex items-center justify-center text-gray-400 font-bold">Image: Quality Control</div>
+                            <div className="w-full md:w-1/3 aspect-video relative shrink-0 overflow-hidden">
+                                <Image
+                                    src="/images/templates/authority-minimal/equip-cmm.jpg"
+                                    alt="三次元測定機"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                             <div>
                                 <h4 className="font-bold text-lg mb-2 text-[var(--color-primary)]">三次元測定機による徹底した品質管理</h4>

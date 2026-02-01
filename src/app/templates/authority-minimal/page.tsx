@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from './_components/Layout';
 import { problems, strengths, works, recruitTeaser } from '@/data/authority-minimal/sample';
 
@@ -12,12 +13,15 @@ export default function AuthorityMinimalPage() {
                 <section className="relative h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden bg-black">
                     {/* Background Overlay */}
                     <div className="absolute inset-0 bg-black/40 z-10" />
-                    {/* Placeholder for Video/Image */}
+                    {/* Background Image */}
                     <div className="absolute inset-0 z-0">
-                        {/* Use a placeholder div or img here. For now, a dark bg with a message if image missing */}
-                        <div className="w-full h-full bg-slate-900 flex items-center justify-center text-white/10 text-9xl font-bold uppercase tracking-tighter">
-                            Precision
-                        </div>
+                        <Image
+                            src="/images/templates/authority-minimal/hero-main.jpg"
+                            alt="精密金属加工"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
                     </div>
 
                     <div className="relative z-20 text-center text-white px-6">
@@ -88,22 +92,30 @@ export default function AuthorityMinimalPage() {
                             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)]">選ばれる3つの理由</h2>
                         </div>
 
-                        {strengths.map((strength, index) => (
-                            <div key={strength.id} className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                                <div className="w-full md:w-1/2 aspect-[4/3] bg-gray-300 relative rounded-sm overflow-hidden group">
-                                    {/* Image Placeholder */}
-                                    <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-700 ease-out" />
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold text-xl">
-                                        Image: {strength.title}
+                        {strengths.map((strength, index) => {
+                            const strengthImages = [
+                                '/images/templates/authority-minimal/equip-cmm.jpg',
+                                '/images/templates/authority-minimal/equip-nc.jpg',
+                                '/images/templates/authority-minimal/equip-complex.jpg'
+                            ];
+                            return (
+                                <div key={strength.id} className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                                    <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-sm overflow-hidden group">
+                                        <Image
+                                            src={strengthImages[index]}
+                                            alt={strength.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                        />
+                                    </div>
+                                    <div className="w-full md:w-1/2 space-y-6">
+                                        <span className="text-[var(--color-accent)] font-bold tracking-widest text-sm uppercase">Reason 0{strength.id}</span>
+                                        <h3 className="text-3xl font-bold text-[var(--color-primary)] leading-tight">{strength.title}</h3>
+                                        <p className="text-gray-600 leading-relaxed text-lg">{strength.description}</p>
                                     </div>
                                 </div>
-                                <div className="w-full md:w-1/2 space-y-6">
-                                    <span className="text-[var(--color-accent)] font-bold tracking-widest text-sm uppercase">Reason 0{strength.id}</span>
-                                    <h3 className="text-3xl font-bold text-[var(--color-primary)] leading-tight">{strength.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed text-lg">{strength.description}</p>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </section>
 
@@ -121,22 +133,33 @@ export default function AuthorityMinimalPage() {
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-                            {works.map((work) => (
-                                <div key={work.id} className="group relative aspect-square bg-gray-100 overflow-hidden cursor-pointer">
-                                    {/* Image Placeholder */}
-                                    <div className="absolute inset-0 bg-gray-200 transition-transform duration-500 group-hover:scale-110" />
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
-                                        {work.title}
-                                    </div>
+                            {works.map((work, index) => {
+                                const workImages = [
+                                    '/images/templates/authority-minimal/process-nc.jpg',
+                                    '/images/templates/authority-minimal/process-mc.jpg',
+                                    '/images/templates/authority-minimal/process-complex.jpg',
+                                    '/images/templates/authority-minimal/equip-nc.jpg',
+                                    '/images/templates/authority-minimal/equip-mc.jpg',
+                                    '/images/templates/authority-minimal/equip-complex.jpg'
+                                ];
+                                return (
+                                    <div key={work.id} className="group relative aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                                        <Image
+                                            src={workImages[index % workImages.length]}
+                                            alt={work.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
 
-                                    {/* Overlay Content */}
-                                    <div className="absolute inset-0 bg-[var(--color-primary)]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6 text-center">
-                                        <h4 className="text-xl font-bold mb-2">{work.title}</h4>
-                                        <p className="text-sm opacity-80 mb-1">{work.material}</p>
-                                        <p className="text-xs opacity-60 uppercase tracking-widest">{work.process}</p>
+                                        {/* Overlay Content */}
+                                        <div className="absolute inset-0 bg-[var(--color-primary)]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6 text-center">
+                                            <h4 className="text-xl font-bold mb-2">{work.title}</h4>
+                                            <p className="text-sm opacity-80 mb-1">{work.material}</p>
+                                            <p className="text-xs opacity-60 uppercase tracking-widest">{work.process}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
 
                         <div className="mt-12 text-center md:hidden">
@@ -149,8 +172,16 @@ export default function AuthorityMinimalPage() {
 
                 {/* Section 5: Recruit Teaser */}
                 <section className="relative py-32 bg-gray-900 text-white overflow-hidden">
-                    {/* Background Image Placeholder */}
-                    <div className="absolute inset-0 opacity-40 bg-blue-900 mix-blend-multiply" />
+                    {/* Background Image */}
+                    <div className="absolute inset-0">
+                        <Image
+                            src="/images/templates/authority-minimal/recruit-team.jpg"
+                            alt="採用情報"
+                            fill
+                            className="object-cover opacity-40"
+                        />
+                    </div>
+                    <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply" />
 
                     <div className="container relative z-10 mx-auto px-6">
                         <div className="max-w-2xl">

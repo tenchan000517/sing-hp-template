@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { jobs, recruitBanner } from '@/data/leadgen-minimal/sample';
 
@@ -9,10 +10,13 @@ export default function LeadgenMinimalRecruitPage() {
             <Header />
             <main className="pt-20">
                 <section className="bg-gray-100 py-24 relative overflow-hidden">
-                    <div className="absolute right-0 top-0 w-full md:w-1/2 h-full bg-gray-200">
-                        <div className="w-full h-full flex items-center justify-center text-gray-400 font-bold">
-                            IMAGE: Recruit Hero
-                        </div>
+                    <div className="absolute right-0 top-0 w-full md:w-1/2 h-full">
+                        <Image
+                            src="/images/templates/leadgen-minimal/recruit-team.jpg"
+                            alt="採用情報"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
                     <div className="container mx-auto px-6 relative z-10">
                         <div className="w-full md:w-1/2">

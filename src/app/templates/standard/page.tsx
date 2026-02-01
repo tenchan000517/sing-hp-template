@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from './_components/Layout';
 import { company, recruit, news } from '@/data/standard/sample';
 
@@ -10,10 +11,16 @@ export default function StandardPage() {
             <main className="pt-20">
                 {/* Section 1: Hero */}
                 <section className="relative min-h-[600px] flex items-center bg-[var(--color-primary)] overflow-hidden">
-                    {/* Background Image Placeholder */}
-                    <div className="absolute inset-0 z-0 bg-gray-900">
-                        {/* Replace with actual image */}
-                        <div className="w-full h-full opacity-30 bg-gradient-to-r from-gray-900 to-transparent"></div>
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/images/templates/standard/generated/top_fv_main.jpg"
+                            alt="中部建設"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/50"></div>
                     </div>
 
                     <div className="container mx-auto px-6 relative z-10 text-white">
@@ -117,11 +124,38 @@ export default function StandardPage() {
                                 </Link>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
-                                {/* Placeholder for Logos/Images */}
-                                <div className="bg-gray-100 aspect-square flex items-center justify-center text-gray-400 font-bold">Client Logo</div>
-                                <div className="bg-gray-100 aspect-square flex items-center justify-center text-gray-400 font-bold">Client Logo</div>
-                                <div className="bg-gray-100 aspect-square flex items-center justify-center text-gray-400 font-bold">ISO Cert</div>
-                                <div className="bg-gray-100 aspect-square flex items-center justify-center text-gray-400 font-bold">Factory Img</div>
+                                <div className="aspect-square relative overflow-hidden rounded">
+                                    <Image
+                                        src="/images/templates/standard/generated/completed_building_sky.jpg"
+                                        alt="完成建物"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="aspect-square relative overflow-hidden rounded">
+                                    <Image
+                                        src="/images/templates/standard/generated/construction_wide.jpg"
+                                        alt="建設現場"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="aspect-square relative overflow-hidden rounded">
+                                    <Image
+                                        src="/images/templates/standard/generated/inspection_work.jpg"
+                                        alt="品質検査"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="aspect-square relative overflow-hidden rounded">
+                                    <Image
+                                        src="/images/templates/standard/generated/team_photo.jpg"
+                                        alt="チーム"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,8 +165,13 @@ export default function StandardPage() {
                 <section className="relative py-32 bg-[var(--color-primary-dark)] overflow-hidden text-white">
                     {/* Background Image with Overlay */}
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
-                    <div className="absolute inset-0 z-0 bg-gray-800">
-                        {/* Place Image Here */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/images/templates/standard/generated/mentoring_scene.jpg"
+                            alt="採用情報"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
 
                     <div className="container mx-auto px-6 relative z-20 text-center">

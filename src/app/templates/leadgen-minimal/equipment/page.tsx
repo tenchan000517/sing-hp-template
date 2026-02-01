@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { equipments } from '@/data/leadgen-minimal/sample';
 
@@ -37,9 +38,13 @@ export default function LeadgenMinimalEquipmentPage() {
                             <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-8 border-l-4 border-[var(--color-accent)] pl-6">
                                 信頼性の保証（三次元測定機）
                             </h2>
-                            <div className="bg-gray-100 aspect-video w-full flex items-center justify-center text-gray-400 font-bold text-2xl relative rounded-sm overflow-hidden">
-                                <div className="absolute inset-0 bg-gray-200" />
-                                <span className="relative z-10">IMAGE: CMM Introduction</span>
+                            <div className="aspect-video w-full relative rounded-sm overflow-hidden">
+                                <Image
+                                    src="/images/templates/leadgen-minimal/equip-cmm.jpg"
+                                    alt="三次元測定機"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                             <p className="mt-6 text-gray-600 leading-relaxed">
                                 最新の三次元測定機を導入し、複雑形状の部品も高精度に測定可能です。<br />

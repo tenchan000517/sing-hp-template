@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Layout, { CTASection } from "../_components/Layout";
 import { ceoMessage, companyInfo, history, access, clients } from "@/data/fullorder/sample";
 
@@ -35,12 +36,13 @@ function CeoMessageSection() {
 
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <div className="md:col-span-2">
-            <div className="aspect-[3/4] bg-gray-200 rounded overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <svg className="w-16 h-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
+            <div className="aspect-[3/4] bg-gray-200 rounded overflow-hidden relative">
+              <Image
+                src={ceoMessage.photo}
+                alt={ceoMessage.name}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-500">{ceoMessage.title}</p>

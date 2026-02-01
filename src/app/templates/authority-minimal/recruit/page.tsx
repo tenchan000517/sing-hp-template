@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { recruitConcept, infographics, interviews, jobs } from '@/data/authority-minimal/sample';
 
@@ -40,12 +41,21 @@ export default function RecruitPage() {
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-16 text-center">先輩社員の声</h2>
                         <div className="space-y-24">
-                            {interviews.map((interview, index) => (
+                            {interviews.map((interview, index) => {
+                                const interviewImages = [
+                                    '/images/templates/authority-minimal/interview-tamura.jpg',
+                                    '/images/templates/authority-minimal/interview-sasaki.jpg',
+                                    '/images/templates/authority-minimal/interview-yamamoto.jpg'
+                                ];
+                                return (
                                 <div key={interview.id} className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                                    <div className="w-full md:w-1/2 aspect-[4/3] bg-gray-200 relative rounded-sm overflow-hidden group">
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold bg-gray-100">
-                                            Image: {interview.name}
-                                        </div>
+                                    <div className="w-full md:w-1/2 aspect-[4/3] relative rounded-sm overflow-hidden group">
+                                        <Image
+                                            src={interviewImages[index % interviewImages.length]}
+                                            alt={interview.name}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <div className="w-full md:w-1/2">
                                         <div className="flex items-center gap-4 mb-4">
@@ -62,7 +72,8 @@ export default function RecruitPage() {
                                         </p>
                                     </div>
                                 </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </section>

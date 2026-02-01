@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { services } from '@/data/standard/sample';
 
@@ -18,13 +19,22 @@ export default function ServicePage() {
                 {/* Services List */}
                 <section className="py-24 bg-white">
                     <div className="container mx-auto px-6 space-y-24">
-                        {services.map((service, index) => (
+                        {services.map((service, index) => {
+                            const serviceImages = [
+                                '/images/templates/standard/generated/project_house.jpg',
+                                '/images/templates/standard/generated/project_shopping_mall.jpg',
+                                '/images/templates/standard/generated/project_public_building.jpg',
+                                '/images/templates/standard/generated/renovation_interior.jpg'
+                            ];
+                            return (
                             <div key={index} id={service.title} className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                                <div className="w-full md:w-1/2 aspect-video bg-gray-200 rounded relative overflow-hidden group">
-                                    {/* Image Placeholder */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
-                                        {service.title} Image
-                                    </div>
+                                <div className="w-full md:w-1/2 aspect-video rounded relative overflow-hidden group">
+                                    <Image
+                                        src={serviceImages[index % serviceImages.length]}
+                                        alt={service.title}
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                                 <div className="w-full md:w-1/2">
                                     <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--color-primary)]">
@@ -43,7 +53,8 @@ export default function ServicePage() {
                                     </ul>
                                 </div>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </section>
 

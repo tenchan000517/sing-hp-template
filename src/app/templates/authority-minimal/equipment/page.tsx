@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { equipments } from '@/data/authority-minimal/sample';
 
@@ -16,19 +17,23 @@ export default function EquipmentPage() {
                 </div>
 
                 <div className="container mx-auto px-6 py-24 space-y-24 max-w-6xl">
-                    {equipments.map((equip, index) => (
+                    {equipments.map((equip, index) => {
+                        const equipmentImages = [
+                            '/images/templates/authority-minimal/equip-nc.jpg',
+                            '/images/templates/authority-minimal/equip-mc.jpg',
+                            '/images/templates/authority-minimal/equip-complex.jpg',
+                            '/images/templates/authority-minimal/equip-cmm.jpg'
+                        ];
+                        return (
                         <section key={index} className="flex flex-col md:flex-row gap-12 items-center bg-white p-8 md:p-12 rounded-sm shadow-sm md:odd:flex-row-reverse">
                             {/* Image Area */}
-                            <div className="w-full md:w-1/2 aspect-video bg-gray-200 relative group overflow-hidden">
-                                {equip.image ? (
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold bg-gray-100">
-                                        Image: {equip.category}
-                                    </div>
-                                ) : (
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold bg-gray-100">
-                                        No Image
-                                    </div>
-                                )}
+                            <div className="w-full md:w-1/2 aspect-video relative group overflow-hidden">
+                                <Image
+                                    src={equipmentImages[index % equipmentImages.length]}
+                                    alt={equip.category}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
 
                             {/* Text Area */}
@@ -58,7 +63,8 @@ export default function EquipmentPage() {
                                 </div>
                             </div>
                         </section>
-                    ))}
+                        );
+                    })}
 
                     <div className="bg-[var(--color-primary)] text-white p-12 text-center rounded-sm">
                         <h3 className="text-2xl font-bold mb-4">設備見学も随時受け付けております</h3>

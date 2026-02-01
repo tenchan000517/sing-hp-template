@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { articles } from '@/data/recruit-magazine/sample';
 
@@ -19,9 +20,13 @@ export default function WorkPage() {
                     <div className="max-w-4xl mx-auto space-y-24">
                         {workArticles.map((article) => (
                             <Link key={article.id} href={`/templates/recruit-magazine/article/${article.id}`} className="group cursor-pointer flex flex-col md:flex-row gap-12 items-center block">
-                                <div className="w-full md:w-1/2 aspect-video bg-gray-200 relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-105"></div>
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">Work Photo</div>
+                                <div className="w-full md:w-1/2 aspect-video relative overflow-hidden">
+                                    <Image
+                                        src={article.image}
+                                        alt={article.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
                                 </div>
                                 <div className="w-full md:w-1/2">
                                     <div className="text-xs font-bold text-gray-400 mb-2">{article.date}</div>

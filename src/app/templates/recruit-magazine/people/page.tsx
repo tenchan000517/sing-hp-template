@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { articles } from '@/data/recruit-magazine/sample';
 
@@ -20,9 +21,12 @@ export default function PeoplePage() {
                         {peopleArticles.map((article) => (
                             <Link key={article.id} href={`/templates/recruit-magazine/article/${article.id}`} className="group cursor-pointer block">
                                 <div className="aspect-[3/4] bg-gray-200 mb-6 relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-105"></div>
-                                    {/* Image Placeholder */}
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">Photo</div>
+                                    <Image
+                                        src={article.image}
+                                        alt={article.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
                                 </div>
                                 <div className="flex flex-col items-start">
                                     <span className="text-[10px] font-bold tracking-widest bg-[var(--color-primary)] text-white px-2 py-1 mb-4">

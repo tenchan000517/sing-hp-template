@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from './_components/Layout';
 import { articles, stats, company } from '@/data/recruit-magazine/sample';
 
@@ -45,11 +46,13 @@ export default function RecruitMagazinePage() {
                     {/* Right: Main Image */}
                     <div className="w-full md:w-2/3 relative order-1 md:order-2 group cursor-pointer">
                         <div className="absolute inset-0 border-2 border-[var(--color-primary)] translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                        <div className="relative h-full w-full bg-gray-300 overflow-hidden min-h-[400px]">
-                            {/* Image Placeholder */}
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-serif text-2xl bg-gray-200">
-                                Cover Photo<br /><span className="text-base mt-2 opacity-60">Tamura & Yamamoto</span>
-                            </div>
+                        <div className="relative h-full w-full overflow-hidden min-h-[400px]">
+                            <Image
+                                src={featuredArticle.image}
+                                alt={featuredArticle.title}
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </section>
@@ -66,8 +69,12 @@ export default function RecruitMagazinePage() {
                             {pickupArticles.map((article) => (
                                 <Link key={article.id} href={`/templates/recruit-magazine/article/${article.id}`} className="group cursor-pointer flex flex-col h-full block">
                                     <div className="aspect-[4/3] bg-gray-200 mb-6 relative overflow-hidden">
-                                        {/* Image Placeholder */}
-                                        <div className="absolute inset-0 bg-gray-300 transition-transform duration-500 group-hover:scale-110"></div>
+                                        <Image
+                                            src={article.image}
+                                            alt={article.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
                                         <div className="absolute top-4 left-4 bg-white px-3 py-1 text-xs font-bold tracking-widest border border-gray-900">
                                             {article.category}
                                         </div>
@@ -122,9 +129,13 @@ export default function RecruitMagazinePage() {
 
                             <div className="flex flex-col md:flex-row gap-12">
                                 <div className="w-full md:w-1/3">
-                                    <div className="aspect-[3/4] bg-gray-200 border-4 border-white shadow-sm -rotate-2 relative">
-                                        {/* CEO Photo */}
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-400">CEO Photo</div>
+                                    <div className="aspect-[3/4] bg-gray-200 border-4 border-white shadow-sm -rotate-2 relative overflow-hidden">
+                                        <Image
+                                            src="/images/templates/recruit-magazine/ceo.jpg"
+                                            alt={company.representative}
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                     <div className="mt-4 text-center font-handwriting">
                                         <p className="text-xl font-bold">{company.representative}</p>

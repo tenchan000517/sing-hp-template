@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Megaphone, Clock, CheckCircle } from 'lucide-react';
 import { Header, Footer } from './_components/Layout';
 import { hero, trustLogos, solutions, works, recruitBanner, company } from '@/data/leadgen-minimal/sample';
@@ -12,11 +13,14 @@ export default function LeadgenMinimalPage() {
                 {/* Section 1: Hero */}
                 <section className="relative h-[calc(100vh-80px)] min-h-[600px] bg-gray-100 flex items-center overflow-hidden">
                     {/* Background Image Area (Right Half for Desktop) */}
-                    <div className="absolute right-0 top-0 w-full md:w-1/2 h-full bg-gray-200">
-                        {/* Placeholder for 'hero-minimal.jpg' */}
-                        <div className="w-full h-full flex items-center justify-center bg-gray-300 text-gray-500 font-bold text-2xl">
-                            IMAGE: Precision Metal Parts (Macro)
-                        </div>
+                    <div className="absolute right-0 top-0 w-full md:w-1/2 h-full">
+                        <Image
+                            src="/images/templates/leadgen-minimal/hero-main.jpg"
+                            alt="精密金属加工"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
                     </div>
 
                     <div className="container relative z-10 mx-auto px-6 h-full flex items-center">
@@ -59,6 +63,11 @@ export default function LeadgenMinimalPage() {
                         <div className="space-y-32">
                             {solutions.map((sol, index) => {
                                 const Icon = index === 0 ? Megaphone : index === 1 ? Clock : CheckCircle;
+                                const solutionImages = [
+                                    '/images/templates/leadgen-minimal/equip-complex.jpg',
+                                    '/images/templates/leadgen-minimal/equip-nc.jpg',
+                                    '/images/templates/leadgen-minimal/equip-cmm.jpg'
+                                ];
                                 return (
                                     <div key={index} className={`flex flex-col md:flex-row gap-12 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                                         <div className="w-full md:w-5/12 pt-4">
@@ -73,10 +82,12 @@ export default function LeadgenMinimalPage() {
                                             </p>
                                         </div>
                                         <div className="w-full md:w-7/12 aspect-[4/3] bg-gray-100 rounded-sm relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gray-200" />
-                                            <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold opacity-30 text-4xl">
-                                                Image: Solution {index + 1}
-                                            </div>
+                                            <Image
+                                                src={solutionImages[index]}
+                                                alt={sol.titulo}
+                                                fill
+                                                className="object-cover"
+                                            />
                                         </div>
                                     </div>
                                 );
@@ -101,10 +112,12 @@ export default function LeadgenMinimalPage() {
                             {works.map((work) => (
                                 <div key={work.id} className="group cursor-pointer">
                                     <div className="aspect-square bg-white mb-6 overflow-hidden relative">
-                                        <div className="absolute inset-0 bg-gray-300 transition-transform duration-700 group-hover:scale-105" />
-                                        <div className="absolute inset-0 flex items-center justify-center text-white/50 font-bold">
-                                            IMAGE: {work.title}
-                                        </div>
+                                        <Image
+                                            src={work.image}
+                                            alt={work.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
                                     </div>
                                     <h3 className="text-xl font-bold text-[var(--color-primary)] mb-2 group-hover:text-[var(--color-accent)] transition-colors">
                                         {work.title}
@@ -122,10 +135,13 @@ export default function LeadgenMinimalPage() {
                 <section className="py-32 bg-white">
                     <div className="container mx-auto px-6">
                         <div className="bg-gray-100 rounded-sm p-12 md:p-24 relative overflow-hidden">
-                            <div className="absolute right-0 top-0 w-full md:w-1/2 h-full bg-gray-200">
-                                <div className="w-full h-full flex items-center justify-center text-gray-400 font-bold">
-                                    IMAGE: Recruit
-                                </div>
+                            <div className="absolute right-0 top-0 w-full md:w-1/2 h-full">
+                                <Image
+                                    src="/images/templates/leadgen-minimal/recruit-team.jpg"
+                                    alt="採用情報"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
 
                             <div className="relative z-10 w-full md:w-1/2 pr-0 md:pr-12">

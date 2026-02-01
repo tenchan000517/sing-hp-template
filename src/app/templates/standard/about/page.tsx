@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { company } from '@/data/standard/sample';
 
@@ -19,11 +20,13 @@ export default function AboutPage() {
                 <section className="py-24 bg-white">
                     <div className="container mx-auto px-6">
                         <div className="flex flex-col md:flex-row gap-12 items-center">
-                            <div className="w-full md:w-1/3 aspect-[3/4] bg-gray-200 rounded relative overflow-hidden">
-                                {/* Image Placeholder */}
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-bold">
-                                    CEO Image
-                                </div>
+                            <div className="w-full md:w-1/3 aspect-[3/4] rounded relative overflow-hidden">
+                                <Image
+                                    src="/images/templates/standard/generated/ceo_portrait.jpg"
+                                    alt={`代表取締役 ${company.representative}`}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                             <div className="w-full md:w-2/3">
                                 <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--color-primary)]">
@@ -101,10 +104,16 @@ export default function AboutPage() {
                     <div className="container mx-auto px-6 text-center">
                         <h2 className="text-2xl font-bold mb-10 text-[var(--color-primary)]">アクセス</h2>
                         <div className="w-full aspect-video bg-gray-200 rounded overflow-hidden relative">
-                            {/* Google Maps Placeholder */}
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                Google Maps Embed
-                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.123456789!2d137.16!3d34.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU1JzEyLjAiTiAxMzfCsDA5JzM2LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="Google Map"
+                            />
                         </div>
                         <p className="mt-6 text-gray-600">
                             名鉄名古屋本線「美合駅」より車で5分<br />

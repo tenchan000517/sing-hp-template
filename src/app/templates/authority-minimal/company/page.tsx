@@ -1,4 +1,5 @@
 
+import Image from 'next/image';
 import { Header, Footer } from '../_components/Layout';
 import { ceoMessage, company } from '@/data/authority-minimal/sample';
 
@@ -22,10 +23,13 @@ export default function CompanyPage() {
 
                         <div className="flex flex-col md:flex-row gap-12 lg:gap-20 justify-center">
                             {/* Image */}
-                            <div className="w-full md:w-[400px] h-[500px] bg-gray-300 relative shrink-0 grayscale hover:grayscale-0 transition-all duration-700">
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold bg-gray-200">
-                                    Image: CEO {ceoMessage.name}
-                                </div>
+                            <div className="w-full md:w-[400px] h-[500px] relative shrink-0 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+                                <Image
+                                    src="/images/templates/authority-minimal/ceo.jpg"
+                                    alt={`${company.representativeTitle} ${ceoMessage.name}`}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
 
                             {/* Message (Vertical on PC) */}

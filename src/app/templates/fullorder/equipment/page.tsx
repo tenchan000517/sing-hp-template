@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Layout, { CTASection } from "../_components/Layout";
 import { equipments } from "@/data/fullorder/sample";
 
@@ -39,14 +40,13 @@ function EquipmentCategorySection({
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((item) => (
           <div key={item.id} className="bg-white rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-            <div className="aspect-[4/3] bg-gray-200">
-              <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                <svg className="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={2} />
-                  <circle cx="8.5" cy="8.5" r="1.5" strokeWidth={2} />
-                  <path strokeWidth={2} d="M21 15l-5-5L5 21" />
-                </svg>
-              </div>
+            <div className="aspect-[4/3] bg-gray-200 relative">
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="p-6">
               <h3 className="font-bold text-[#2C3E50] text-lg mb-1">{item.name}</h3>
