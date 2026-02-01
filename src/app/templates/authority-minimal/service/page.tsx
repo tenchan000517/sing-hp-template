@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Header, Footer } from '../_components/Layout';
-import { specs, qualityFlow, orderFlow } from '@/data/authority-minimal/sample';
+import { specs, qualityFlow, orderFlow, faq } from '@/data/authority-minimal/sample';
 
 export default function ServicePage() {
     return (
@@ -93,6 +93,24 @@ export default function ServicePage() {
                             <Link href="/templates/authority-minimal/contact" className="inline-block bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white px-12 py-4 rounded-sm font-bold text-lg transition-colors">
                                 お見積り・ご相談はこちら
                             </Link>
+                        </div>
+                    </section>
+
+                    {/* Section 5: FAQ */}
+                    <section id="qa" className="max-w-4xl mx-auto">
+                        <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-12 border-l-4 border-[var(--color-accent)] pl-4">よくある質問</h2>
+                        <div className="space-y-4">
+                            {faq.map((item) => (
+                                <details key={item.id} className="bg-white border border-gray-100 rounded-sm group">
+                                    <summary className="flex justify-between items-center cursor-pointer p-6 font-bold text-[var(--color-primary)] hover:bg-gray-50 transition-colors">
+                                        <span className="pr-4">{item.question}</span>
+                                        <span className="text-[var(--color-accent)] text-xl group-open:rotate-45 transition-transform">+</span>
+                                    </summary>
+                                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                                        {item.answer}
+                                    </div>
+                                </details>
+                            ))}
                         </div>
                     </section>
                 </div>

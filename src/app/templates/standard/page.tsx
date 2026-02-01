@@ -78,11 +78,9 @@ export default function StandardPage() {
 
                         <div className="grid md:grid-cols-3 gap-12">
                             {company.strengths.map((strength, index) => (
-                                <div key={index} className="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 bg-[var(--color-bg-secondary)] rounded-full flex items-center justify-center mb-6 text-[var(--color-primary)]">
-                                        <span className="text-xl font-bold">0{index + 1}</span>
-                                    </div>
-                                    <h3 className="text-xl font-bold mb-4 text-[var(--color-primary)]">{strength.title}</h3>
+                                <div key={index}>
+                                    <span className="text-[var(--color-accent)] text-sm font-bold tracking-widest">0{index + 1}</span>
+                                    <h3 className="text-2xl font-bold mt-2 mb-4 text-[var(--color-primary)]">{strength.title}</h3>
                                     <p className="text-gray-600 leading-relaxed">
                                         {strength.description}
                                     </p>
