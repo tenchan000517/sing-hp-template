@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Layout, { CTASection } from "../_components/Layout";
-import { ceoMessage, companyInfo, history, access, clients } from "@/data/fullorder/sample";
+import { company, ceoMessage, companyInfo, history, access, clients } from "@/data/fullorder/sample";
 
 export const metadata: Metadata = {
   title: "会社概要",
-  description: "三河精密工業株式会社の会社概要。創業52年、精密金属加工のプロフェッショナル集団です。",
+  description: "東海プレシジョン株式会社の会社概要。航空宇宙・医療機器向け精密部品加工のスペシャリスト集団です。",
 };
 
 // ヒーローセクション
@@ -15,7 +15,7 @@ function PageHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-4xl font-bold mb-4">会社概要</h1>
         <p className="text-white/80 text-lg">
-          創業52年、困ったときに頼れる存在であり続けるために
+          空と命に精度を届ける、精密加工のプロフェッショナル
         </p>
       </div>
     </section>
@@ -195,10 +195,10 @@ function AccessSection() {
           {/* アクセス情報 */}
           <div>
             <h3 className="text-xl font-bold text-[#2C3E50] mb-6">
-              三河精密工業株式会社
+              {company.name}
             </h3>
             <p className="text-gray-600 mb-6">
-              〒444-0802 愛知県岡崎市美合町字並松1-23
+              {company.address.full}
             </p>
 
             <div className="space-y-4">

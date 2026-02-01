@@ -5,7 +5,7 @@ import { equipments } from "@/data/fullorder/sample";
 
 export const metadata: Metadata = {
   title: "設備紹介",
-  description: "三河精密工業の加工設備・測定機器をご紹介。最新鋭の設備で高精度加工を実現します。",
+  description: "東海プレシジョンの加工設備・測定機器をご紹介。5軸マシニング、複合加工機など最新鋭の設備で高精度加工を実現します。",
 };
 
 // ヒーローセクション
@@ -109,8 +109,8 @@ export default function EquipmentPage() {
             設備投資への姿勢
           </h2>
           <p className="text-gray-600 leading-relaxed mb-8">
-            三河精密は、創業以来「最新の設備で最高の品質を」という方針を貫いています。
-            お客様の多様なニーズにお応えするため、加工設備・測定設備への継続的な投資を行い、
+            東海プレシジョンは、創業以来「最新の設備で最高の品質を」という方針を貫いています。
+            航空宇宙・医療機器分野のお客様の高度なニーズにお応えするため、加工設備・測定設備への継続的な投資を行い、
             常に最先端の加工技術を提供できる体制を整えています。
           </p>
           <div className="grid md:grid-cols-3 gap-8">

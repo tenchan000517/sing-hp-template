@@ -13,7 +13,7 @@ export function Header() {
                 <div className="flex items-center gap-8">
                     <nav className="hidden md:flex items-center gap-8">
                         <Link href="/templates/authority-minimal/service" className="text-gray-600 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">事業内容</Link>
-                        <Link href="/templates/authority-minimal/equipment" className="text-gray-600 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">設備紹介</Link>
+                        <Link href="/templates/authority-minimal/equipment" className="text-gray-600 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">チーム紹介</Link>
                         <Link href="/templates/authority-minimal/company" className="text-gray-600 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">会社概要</Link>
                         <Link href="/templates/authority-minimal/recruit" className="text-gray-600 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">採用情報</Link>
                     </nav>
@@ -48,7 +48,7 @@ export function Footer() {
                         <h3 className="font-bold mb-4 text-sm tracking-wider opacity-60">企業情報</h3>
                         <ul className="space-y-3 text-sm opacity-80">
                             <li><Link href="/templates/authority-minimal/company" className="hover:text-[var(--color-accent)] transition-colors">会社概要</Link></li>
-                            <li><Link href="/templates/authority-minimal/equipment" className="hover:text-[var(--color-accent)] transition-colors">設備紹介</Link></li>
+                            <li><Link href="/templates/authority-minimal/equipment" className="hover:text-[var(--color-accent)] transition-colors">チーム紹介</Link></li>
                             <li><a href="#" className="hover:text-[var(--color-accent)] transition-colors">個人情報保護方針</a></li>
                         </ul>
                     </div>
@@ -66,13 +66,13 @@ export function Footer() {
                     {/* Col 4: CTA */}
                     <div className="md:col-span-1">
                         <div className="bg-[#0D192E] p-6 rounded-lg">
-                            <p className="text-xs opacity-60 mb-2">図面を送って最短30分で回答</p>
-                            <div className="text-xl font-bold mb-4">お急ぎの方はこちら</div>
+                            <p className="text-xs opacity-60 mb-2">DXのお悩み、お気軽にご相談ください</p>
+                            <div className="text-xl font-bold mb-4">まずは無料相談</div>
                             <Link
                                 href="/templates/authority-minimal/contact"
                                 className="block w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-center py-3 rounded-sm font-bold text-sm transition-colors"
                             >
-                                無料見積もり依頼
+                                お問い合わせ
                             </Link>
                         </div>
                     </div>

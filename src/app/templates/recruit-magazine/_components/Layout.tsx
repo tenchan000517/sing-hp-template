@@ -7,8 +7,8 @@ export function Header() {
         <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-bg-base)]/90 backdrop-blur-sm border-b border-gray-200 h-20 flex items-center transition-all">
             <div className="container mx-auto px-6 h-full flex justify-between items-center">
                 <Link href="/templates/recruit-magazine" className="flex flex-col leading-tight group">
-                    <span className="text-xl font-bold tracking-widest group-hover:text-[var(--color-primary-light)] transition-colors">MEISTER'S LIFE</span>
-                    <span className="text-[10px] tracking-wider text-gray-500">MIKAWA PRECISION RECRUIT</span>
+                    <span className="text-xl font-bold tracking-widest group-hover:text-[var(--color-primary-light)] transition-colors">NEXT STAGE</span>
+                    <span className="text-[10px] tracking-wider text-gray-500">NEXTSTAGE INC. RECRUIT</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -52,10 +52,10 @@ export function Footer() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16 border-b border-white/10 pb-16">
                     <div>
-                        <h2 className="text-3xl font-bold tracking-widest mb-4">MEISTER'S LIFE</h2>
+                        <h2 className="text-3xl font-bold tracking-widest mb-4">NEXT STAGE</h2>
                         <p className="text-sm opacity-60 max-w-md leading-relaxed">
-                            技術は、受け継がれる。<br />
-                            三河精密工業株式会社 採用サイト
+                            働くを、もっと自由に。<br />
+                            {company.name} 採用サイト
                         </p>
                         <div className="mt-8 text-sm opacity-80">
                             <p>{company.name}</p>

@@ -101,7 +101,7 @@ export default function RecruitMagazinePage() {
                 {/* Section 3: Stats (Infographic) */}
                 <section className="py-24 bg-white text-[var(--color-primary)] overflow-hidden">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-center font-serif text-3xl font-bold mb-16">DATA of MIKAWA PRECISION</h2>
+                        <h2 className="text-center font-serif text-3xl font-bold mb-16">DATA of {company.nameEn?.toUpperCase() || company.name}</h2>
 
                         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
                             {stats.map((stat, i) => (
@@ -176,9 +176,9 @@ export default function RecruitMagazinePage() {
                 {/* CTA Banner */}
                 <section className="bg-[var(--color-primary)] text-white py-20 text-center">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl font-serif font-bold mb-8">Let's talk together.</h2>
-                        <p className="mb-10 opacity-80">まずは、工場を見に来ませんか？</p>
-                        <Link href="/templates/recruit-magazine/entry" className="inline-block bg-white text-[var(--color-primary)] px-12 py-4 font-bold tracking-widest hover:bg-gray-100 transition-colors">
+                        <h2 className="text-3xl font-serif font-bold mb-8">Let&apos;s talk together.</h2>
+                        <p className="mb-10 opacity-80">まずは、カジュアルに話しませんか？</p>
+                        <Link href="/templates/recruit-magazine/recruit" className="inline-block bg-white text-[var(--color-primary)] px-12 py-4 font-bold tracking-widest hover:bg-gray-100 transition-colors">
                             ENTRY / CONTACT
                         </Link>
                     </div>

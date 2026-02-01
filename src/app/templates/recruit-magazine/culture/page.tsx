@@ -14,7 +14,7 @@ export default function CulturePage() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-24">
                         <h1 className="text-5xl font-serif font-bold tracking-widest mb-4">CULTURE</h1>
-                        <p className="text-sm font-bold opacity-60 tracking-widest">三河精密の「日常」</p>
+                        <p className="text-sm font-bold opacity-60 tracking-widest">ネクストステージの「日常」</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

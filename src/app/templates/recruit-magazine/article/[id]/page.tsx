@@ -189,10 +189,10 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
         <section className="py-16 bg-[var(--color-accent)]">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              三河精密で働いてみませんか？
+              ネクストステージで働いてみませんか？
             </h2>
             <p className="text-white/90 mb-8">
-              工場見学・カジュアル面談、随時受付中。
+              オフィス見学・カジュアル面談、随時受付中。
             </p>
             <Link
               href="/templates/recruit-magazine/entry"

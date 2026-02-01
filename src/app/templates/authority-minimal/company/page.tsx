@@ -12,7 +12,7 @@ export default function CompanyPage() {
                 <div className="bg-[var(--color-primary)] text-white py-20">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl font-bold mb-4">会社概要</h1>
-                        <p className="opacity-80">三河精密工業について</p>
+                        <p className="opacity-80">{company.name}について</p>
                     </div>
                 </div>
 

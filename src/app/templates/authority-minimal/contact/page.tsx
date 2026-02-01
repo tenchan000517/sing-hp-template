@@ -62,9 +62,9 @@ export default function ContactPage() {
           ) : (
             <div className="bg-white p-8 md:p-12 rounded-sm shadow-sm">
               <p className="text-gray-600 mb-10 leading-relaxed">
-                お見積りは無料です。図面をお持ちの方は添付してください。
+                DXに関するご相談、お見積りは無料です。
                 <br />
-                原則1営業日以内に担当の水野よりご連絡いたします。
+                原則1営業日以内に担当者よりご連絡いたします。
               </p>
 
               <form className="space-y-8" onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, company: e.target.value })
                     }
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-sm focus:outline-none focus:border-[var(--color-accent)] transition-colors"
-                    placeholder="例：三河精密工業株式会社"
+                    placeholder="例：株式会社サンプル"
                   />
                 </div>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, phone: e.target.value })
                     }
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-sm focus:outline-none focus:border-[var(--color-accent)] transition-colors"
-                    placeholder="例：0564-52-3456"
+                    placeholder="例：03-1234-5678"
                   />
                 </div>
 
@@ -190,13 +190,13 @@ export default function ContactPage() {
                 {/* File */}
                 <div>
                   <label className="block font-bold text-gray-700 mb-2">
-                    図面添付{" "}
+                    資料添付{" "}
                     <span className="text-gray-400 text-sm ml-1">任意</span>
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-sm p-8 text-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group relative">
                     <input
                       type="file"
-                      accept=".pdf,.dxf,.dwg,.jpg,.jpeg,.png"
+                      accept=".pdf,.pptx,.docx,.xlsx,.jpg,.jpeg,.png"
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     />
                     <div className="text-gray-400 group-hover:text-[var(--color-accent)] mb-2">
@@ -218,7 +218,7 @@ export default function ContactPage() {
                       クリックしてファイルを選択、またはドラッグ＆ドロップ
                       <br />
                       <span className="text-xs opacity-70">
-                        PDF, DXF, JPG, PNG (最大5MB)
+                        PDF, PowerPoint, Word, Excel, 画像 (最大10MB)
                       </span>
                     </p>
                   </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     className="w-full bg-gray-50 border border-gray-200 p-4 rounded-sm focus:outline-none focus:border-[var(--color-accent)] transition-colors h-40 resize-none"
-                    placeholder="ロット数、納期のご希望などをご記入ください。"
+                    placeholder="DXの課題、期待する支援内容、スケジュール感などをご記入ください。"
                   />
                 </div>
 

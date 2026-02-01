@@ -1,99 +1,101 @@
 
 export const company = {
-    name: "三河精密工業株式会社",
-    representative: "伊藤 正樹",
+    name: "スカイリフォーム株式会社",
+    representative: "山田 健一",
     representativeTitle: "代表取締役",
-    founded: "1973年",
-    foundedYears: 52,
-    address: "〒444-0802 愛知県岡崎市美合町字並松1-23",
-    tel: "0564-52-3456",
-    email: "info@mikawa-seimitsu.co.jp",
-    business: "精密金属部品加工 (NC旋盤・マシニング複合加工)",
-    certification: ["ISO9001 (2005年取得)", "大手自動車部品メーカー認定サプライヤー"],
+    founded: "2005年",
+    foundedYears: 19,
+    address: "〒460-0008 愛知県名古屋市中区栄3-15-33 栄ガスビル6F",
+    tel: "052-265-8900",
+    email: "info@sky-reform.co.jp",
+    business: "住宅リフォーム全般（キッチン・浴室・トイレ・外壁・屋根・内装）",
+    certification: ["建設業許可（愛知県知事許可 般-5 第12345号）", "住宅リフォーム事業者団体登録"],
 };
 
 export const hero = {
-    catch: "0.005mmの約束。",
-    sub: "最短3日。困ったときの三河精密。",
-    cta: "図面を送って見積もり依頼（無料）",
+    catch: "暮らしを、もっと心地よく。",
+    sub: "創業19年・施工実績5,000件以上。地域密着のリフォーム専門店。",
+    cta: "無料見積もり・ご相談はこちら",
 };
 
 export const trustLogos = [
-    { name: "ISO9001", image: "/images/templates/leadgen-minimal/logo-iso.png" },
-    { name: "Partner A", image: "/images/templates/leadgen-minimal/partner-a.png" }, // Placeholder
-    { name: "Partner B", image: "/images/templates/leadgen-minimal/partner-b.png" }, // Placeholder
+    { name: "建設業許可", image: "/images/templates/leadgen-minimal/logo-construction.png" },
+    { name: "LIXIL認定店", image: "/images/templates/leadgen-minimal/logo-lixil.png" },
+    { name: "TOTO認定店", image: "/images/templates/leadgen-minimal/logo-toto.png" },
 ];
 
 export const solutions = [
     {
-        titulo: "「他社お断り案件」歓迎",
-        detail: "難加工、複合加工、小ロット。他社が敬遠する案件こそ、私たちの腕の見せ所です。",
-        icon: "Megaphone", // Placeholder for logic
+        titulo: "明朗会計、追加料金なし",
+        detail: "見積もり金額が最終金額。工事中の追加請求は一切ありません。安心の定額パッケージもご用意。",
+        icon: "Yen",
     },
     {
-        titulo: "「超特急」対応",
-        detail: "独自の工程管理システムにより、最短3日での納品を実現。ラインを止めさせません。",
-        icon: "Clock",
+        titulo: "地域密着19年の信頼",
+        detail: "名古屋市を中心に5,000件以上の施工実績。ご近所の口コミ・紹介が売上の70%を占めています。",
+        icon: "Users",
     },
     {
-        titulo: "「100%良品」保証",
-        detail: "最新の三次元測定機による全数検査体制。不良品ゼロをお約束します。",
-        icon: "CheckCircle",
+        titulo: "職人品質を直接お届け",
+        detail: "自社職人による一貫施工。中間マージンがないから、高品質をお手頃価格で実現します。",
+        icon: "Hammer",
     },
 ];
 
 export const works = [
     {
         id: 1,
-        title: "自動車エンジン部品",
-        spec: "SUS304 / φ100 / 複合加工",
-        image: "/images/templates/leadgen-minimal/work-car.jpg",
+        title: "キッチンリフォーム",
+        spec: "名古屋市緑区 / 築25年マンション / 工期5日",
+        image: "/images/templates/leadgen-minimal/work-kitchen.jpg",
     },
     {
         id: 2,
-        title: "半導体製造装置パーツ",
-        spec: "A5052 / 精密マシニング",
-        image: "/images/templates/leadgen-minimal/work-semi.jpg",
+        title: "浴室リフォーム",
+        spec: "名古屋市千種区 / 戸建て / ユニットバス交換",
+        image: "/images/templates/leadgen-minimal/work-bath.jpg",
     },
     {
         id: 3,
-        title: "航空機用ブラケット",
-        spec: "Ti-6Al-4V / 5軸加工",
-        image: "/images/templates/leadgen-minimal/work-aero.jpg",
+        title: "外壁塗装・屋根工事",
+        spec: "名古屋市名東区 / 築30年戸建て / 遮熱塗料使用",
+        image: "/images/templates/leadgen-minimal/work-exterior.jpg",
     },
 ];
 
 export const recruitBanner = {
-    catch: "真面目に、コツコツ。一生モノの技術を。",
+    catch: "お客様の「ありがとう」がやりがいです。",
     data: [
-        { label: "残業", value: "月15h以内" },
-        { label: "有給消化率", value: "85%" },
+        { label: "平均残業", value: "月10h以内" },
+        { label: "有給取得率", value: "90%" },
     ],
-    cta: "採用情報・エントリー",
+    cta: "採用情報を見る",
 };
 
 export const specs = [
-    { name: "NC旋盤加工", range: "φ2 〜 φ300mm", material: "鉄, ステンレス, アルミ, 真鍮" },
-    { name: "マシニング加工", range: "X:1000 Y:500 Z:500", material: "全般, 難削材対応" },
-    { name: "複合加工", range: "φ200まで", material: "複雑形状対応" },
+    { name: "キッチン・浴室・トイレ", range: "全メーカー対応", material: "LIXIL, TOTO, Panasonic, タカラスタンダード 他" },
+    { name: "内装リフォーム", range: "壁紙・床・建具", material: "クロス張替え、フローリング、畳、障子 他" },
+    { name: "外壁・屋根", range: "塗装・葺き替え", material: "シリコン、フッ素、遮熱塗料、ガルバリウム 他" },
 ];
 
 export const qualityFlow = [
-    { step: 1, title: "工程内検査", desc: "加工者による自主検査" },
-    { step: 2, title: "中間検査", desc: "品質管理担当によるチェック" },
-    { step: 3, title: "出荷前全数検査", desc: "三次元測定機を使用" },
+    { step: 1, title: "現地調査・ヒアリング", desc: "お悩みをじっくりお聞きします" },
+    { step: 2, title: "詳細見積もり", desc: "材料費・工賃を明確にご提示" },
+    { step: 3, title: "自社職人による施工", desc: "丁寧・迅速・きれいな仕上がり" },
+    { step: 4, title: "完工検査・お引き渡し", desc: "最終チェック後、保証書発行" },
 ];
 
 export const equipments = [
-    { name: "NC旋盤", model: "QT-Compact (Mazak)", count: 15 },
-    { name: "マシニングセンタ", model: "MB-46VA (Okuma)", count: 8 },
-    { name: "複合加工機", model: "INTEGREX (Mazak)", count: 3 },
-    { name: "三次元測定機", model: "CRYSTA-Apex (Mitutoyo)", count: 1 },
+    { name: "施工対応エリア", model: "名古屋市全域、尾張・三河地区", count: 0 },
+    { name: "自社職人", model: "内装・水回り・外装専門チーム", count: 25 },
+    { name: "工事車両", model: "ハイエース・軽バン", count: 12 },
+    { name: "アフターサポート", model: "最長10年保証・24時間緊急対応", count: 0 },
 ];
 
 export const jobs = [
-    { title: "製造スタッフ (NC旋盤)", type: "正社員", salary: "月給22万円〜" },
-    { title: "品質管理", type: "正社員", salary: "月給20万円〜" },
+    { title: "リフォーム営業", type: "正社員", salary: "月給25万円〜 + インセンティブ" },
+    { title: "施工スタッフ（内装）", type: "正社員", salary: "月給28万円〜" },
+    { title: "施工スタッフ（水回り）", type: "正社員", salary: "月給28万円〜" },
 ];
 
 export const companyInfo = [
@@ -101,5 +103,23 @@ export const companyInfo = [
     { label: "代表者", value: `${company.representativeTitle} ${company.representative}` },
     { label: "所在地", value: company.address },
     { label: "設立", value: company.founded },
-    { label: "認証", value: company.certification.join(", ") },
+    { label: "資本金", value: "3,000万円" },
+    { label: "従業員数", value: "45名（職人25名含む）" },
+    { label: "事業内容", value: company.business },
+    { label: "許認可", value: company.certification.join(", ") },
+];
+
+export const ceoMessage = {
+    title: "地域に根ざし、信頼を積み重ねる。",
+    message: "創業以来、私たちは「お客様の立場で考える」ことを大切にしてきました。リフォームは、お客様の大切な住まいに手を入れる仕事。だからこそ、一軒一軒に真摯に向き合い、施工後も長くお付き合いできる関係を築いていきたい。「スカイリフォームに頼んでよかった」その言葉が、私たちの一番の喜びです。",
+    image: "/images/templates/leadgen-minimal/ceo.jpg",
+};
+
+export const navigation = [
+    { href: "/templates/leadgen-minimal", label: "ホーム" },
+    { href: "/templates/leadgen-minimal/cases", label: "施工事例" },
+    { href: "/templates/leadgen-minimal/equipment", label: "対応工事" },
+    { href: "/templates/leadgen-minimal/company", label: "会社概要" },
+    { href: "/templates/leadgen-minimal/recruit", label: "採用情報" },
+    { href: "/templates/leadgen-minimal/contact", label: "お問い合わせ" },
 ];

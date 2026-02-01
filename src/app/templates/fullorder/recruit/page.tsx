@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "採用情報",
-  description: "三河精密工業の採用情報。ミクロンに挑む仲間を募集しています。未経験者歓迎。",
+  description: "東海プレシジョンの採用情報。航空宇宙・医療機器向け精密加工の技術者を募集しています。未経験者歓迎。",
 };
 
 // ヒーローセクション
@@ -87,7 +87,7 @@ function InfographicsSection() {
     <section className="py-24 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-[#2C3E50] mb-4">
-          データで見る三河精密
+          データで見る東海プレシジョン
         </h2>
         <p className="text-center text-gray-600 mb-16">
           Numbers that tell our story

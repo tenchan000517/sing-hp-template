@@ -14,7 +14,7 @@ export default function PeoplePage() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-24">
                         <h1 className="text-5xl font-serif font-bold tracking-widest mb-4">PEOPLE</h1>
-                        <p className="text-sm font-bold opacity-60 tracking-widest">三河精密の「人」</p>
+                        <p className="text-sm font-bold opacity-60 tracking-widest">ネクストステージの「人」</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-16">

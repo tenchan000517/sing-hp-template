@@ -11,8 +11,8 @@ export default function EquipmentPage() {
                 {/* Page Title */}
                 <div className="bg-[var(--color-primary)] text-white py-20">
                     <div className="container mx-auto px-6">
-                        <h1 className="text-4xl font-bold mb-4">設備紹介</h1>
-                        <p className="opacity-80">高精度加工を支える最新鋭の設備群</p>
+                        <h1 className="text-4xl font-bold mb-4">チーム紹介</h1>
+                        <p className="opacity-80">DX成功を支える専門家集団</p>
                     </div>
                 </div>
 
@@ -43,15 +43,15 @@ export default function EquipmentPage() {
                                 </h2>
 
                                 <div className="space-y-6 text-gray-700">
-                                    {equip.count && (
+                                    {equip.count > 0 && (
                                         <div className="flex items-center justify-between border-b border-gray-100 pb-2">
-                                            <span className="font-bold">保有台数</span>
-                                            <span className="text-2xl font-bold text-[var(--color-primary)]">{equip.count} <span className="text-sm font-normal text-gray-500">台</span></span>
+                                            <span className="font-bold">メンバー数</span>
+                                            <span className="text-2xl font-bold text-[var(--color-primary)]">{equip.count} <span className="text-sm font-normal text-gray-500">名</span></span>
                                         </div>
                                     )}
 
                                     <div>
-                                        <p className="font-bold mb-2 text-sm text-gray-500 uppercase tracking-widest">主な機種</p>
+                                        <p className="font-bold mb-2 text-sm text-gray-500 uppercase tracking-widest">専門領域</p>
                                         <p className="text-lg font-medium">{equip.models}</p>
                                     </div>
 
@@ -67,10 +67,10 @@ export default function EquipmentPage() {
                     })}
 
                     <div className="bg-[var(--color-primary)] text-white p-12 text-center rounded-sm">
-                        <h3 className="text-2xl font-bold mb-4">設備見学も随時受け付けております</h3>
-                        <p className="mb-8 opacity-80">実際の加工現場をご覧になりたい方は、お気軽にお問い合わせください。</p>
+                        <h3 className="text-2xl font-bold mb-4">まずはお気軽にご相談ください</h3>
+                        <p className="mb-8 opacity-80">DXの課題整理から、具体的なプロジェクトのご相談まで、お気軽にお問い合わせください。</p>
                         <a href="/templates/authority-minimal/contact" className="inline-block bg-white text-[var(--color-primary)] px-8 py-3 rounded-sm font-bold hover:bg-gray-100 transition-colors">
-                            お問い合わせ・見学依頼
+                            お問い合わせ・ご相談
                         </a>
                     </div>
                 </div>

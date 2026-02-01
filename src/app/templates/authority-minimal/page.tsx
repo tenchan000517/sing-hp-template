@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Header, Footer } from './_components/Layout';
-import { problems, strengths, works, recruitTeaser } from '@/data/authority-minimal/sample';
+import { problems, strengths, works, recruitTeaser, company, ceoMessage } from '@/data/authority-minimal/sample';
 
 export default function AuthorityMinimalPage() {
     return (
@@ -17,7 +17,7 @@ export default function AuthorityMinimalPage() {
                     <div className="absolute inset-0 z-0">
                         <Image
                             src="/images/templates/authority-minimal/hero-main.jpg"
-                            alt="精密金属加工"
+                            alt="DXコンサルティング"
                             fill
                             className="object-cover"
                             priority
@@ -26,10 +26,10 @@ export default function AuthorityMinimalPage() {
 
                     <div className="relative z-20 text-center text-white px-6">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                            0.005mmの約束。
+                            {ceoMessage.title.split('。')[0]}。
                         </h1>
                         <p className="text-base md:text-lg opacity-90 mb-10 tracking-wide">
-                            愛知県岡崎市。NC旋盤・マシニング複合加工の三河精密工業
+                            {company.business}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -37,7 +37,7 @@ export default function AuthorityMinimalPage() {
                                 href="/templates/authority-minimal/contact"
                                 className="bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white px-10 py-4 rounded-sm font-bold text-lg transition-all hover:tracking-wide w-full sm:w-auto"
                             >
-                                加工のご相談・お見積り
+                                ご相談・お問い合わせ
                             </Link>
                             <Link
                                 href="/templates/authority-minimal/recruit"
@@ -72,12 +72,12 @@ export default function AuthorityMinimalPage() {
                             </div>
                             <div className="bg-[var(--color-bg-secondary)] p-10 md:p-16 rounded-sm relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-accent)]/10 rounded-bl-full" />
-                                <h3 className="text-2xl font-bold mb-6 text-[var(--color-primary)]">三河精密なら、<br />解決できます。</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-[var(--color-primary)]">テックフロンティアなら、<br />解決できます。</h3>
                                 <p className="text-gray-600 leading-relaxed mb-8">
-                                    創業52年で培ったノウハウと、最新の複合加工機・三次元測定機を駆使して、高精度・短納期・小ロットの『無理難題』にお応えします。『困ったときは三河さん』その言葉が私たちの誇りです。
+                                    大手コンサルティングファーム出身のコンサルタントとエンジニアが連携し、戦略策定から実行支援まで一気通貫で伴走。絵に描いた餅で終わらせない、実現するDXを提供します。
                                 </p>
                                 <Link href="/templates/authority-minimal/service" className="text-[var(--color-accent)] font-bold hover:underline inline-flex items-center gap-2">
-                                    当社の強みを見る
+                                    サービス詳細を見る
                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                                 </Link>
                             </div>
@@ -124,11 +124,11 @@ export default function AuthorityMinimalPage() {
                     <div className="container mx-auto px-6">
                         <div className="flex justify-between items-end mb-16">
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4">加工事例</h2>
-                                <p className="text-gray-500">多品種・小ロット・難形状。確かな技術の証。</p>
+                                <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4">支援実績</h2>
+                                <p className="text-gray-500">製造、金融、小売、医療。多様な業界のDXを支援。</p>
                             </div>
                             <Link href="/templates/authority-minimal/service" className="hidden md:inline-block border-b-2 border-[var(--color-accent)] text-[var(--color-primary)] pb-1 font-bold hover:text-[var(--color-accent)] transition-colors">
-                                実績一覧を見る
+                                サービス詳細を見る
                             </Link>
                         </div>
 

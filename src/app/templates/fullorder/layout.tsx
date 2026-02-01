@@ -4,7 +4,7 @@ import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
   title: {
-    default: `${company.name} | 困ったときの三河精密`,
+    default: `${company.name} | 航空宇宙・医療機器 精密加工`,
     template: `%s | ${company.name}`,
   },
   description: company.description,

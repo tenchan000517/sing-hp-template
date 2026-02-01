@@ -14,9 +14,8 @@ export function Header() {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-[var(--color-primary)]">
-                    <Link href="/templates/leadgen-minimal/service" className="hover:text-[var(--color-accent)] transition-colors">加工技術</Link>
-                    <Link href="/templates/leadgen-minimal/cases" className="hover:text-[var(--color-accent)] transition-colors">導入事例</Link>
-                    <Link href="/templates/leadgen-minimal/equipment" className="hover:text-[var(--color-accent)] transition-colors">設備紹介</Link>
+                    <Link href="/templates/leadgen-minimal/cases" className="hover:text-[var(--color-accent)] transition-colors">施工事例</Link>
+                    <Link href="/templates/leadgen-minimal/equipment" className="hover:text-[var(--color-accent)] transition-colors">対応工事</Link>
                     <Link href="/templates/leadgen-minimal/company" className="hover:text-[var(--color-accent)] transition-colors">会社概要</Link>
                     <Link href="/templates/leadgen-minimal/recruit" className="hover:text-[var(--color-accent)] transition-colors">採用情報</Link>
                 </nav>
@@ -66,20 +65,19 @@ export function Footer() {
                     <div className="flex gap-12">
                         <ul className="space-y-4 text-sm font-bold opacity-80">
                             <li><Link href="/templates/leadgen-minimal" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">トップページ</Link></li>
-                            <li><Link href="/templates/leadgen-minimal/service" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">加工技術（Service）</Link></li>
-                            <li><Link href="/templates/leadgen-minimal/cases" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">導入事例（Works）</Link></li>
-                            <li><Link href="/templates/leadgen-minimal/equipment" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">設備紹介（Equipment）</Link></li>
+                            <li><Link href="/templates/leadgen-minimal/cases" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">施工事例</Link></li>
+                            <li><Link href="/templates/leadgen-minimal/equipment" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">対応工事</Link></li>
                         </ul>
                         <ul className="space-y-4 text-sm font-bold opacity-80">
-                            <li><Link href="/templates/leadgen-minimal/company" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">会社概要（Company）</Link></li>
-                            <li><Link href="/templates/leadgen-minimal/recruit" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">採用情報（Recruit）</Link></li>
+                            <li><Link href="/templates/leadgen-minimal/company" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">会社概要</Link></li>
+                            <li><Link href="/templates/leadgen-minimal/recruit" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">採用情報</Link></li>
                             <li><Link href="/templates/leadgen-minimal/contact" className="hover:text-[var(--color-accent)] hover:opacity-100 transition-colors">お問い合わせ</Link></li>
                         </ul>
                     </div>
 
                     {/* Col 3: Contact CTA */}
                     <div className="bg-[var(--color-primary-dark)] p-8 rounded-sm text-center">
-                        <p className="text-sm font-bold mb-4 opacity-70">図面添付・お見積り依頼はこちら</p>
+                        <p className="text-sm font-bold mb-4 opacity-70">リフォームのお見積り依頼はこちら</p>
                         <Link
                             href="/templates/leadgen-minimal/contact"
                             className="block w-full bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] text-white py-4 rounded-sm font-bold transition-all hover:scale-105 shadow-lg"

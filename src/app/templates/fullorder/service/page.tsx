@@ -5,7 +5,7 @@ import { processTypes, specs, qualityFlow } from "@/data/fullorder/sample";
 
 export const metadata: Metadata = {
   title: "サービス・事業内容",
-  description: "NC旋盤、マシニング、複合加工。精密金属加工のあらゆるニーズにお応えします。",
+  description: "5軸マシニング、複合加工、難削材加工。航空宇宙・医療機器向け精密部品加工のあらゆるニーズにお応えします。",
 };
 
 // ヒーローセクション
@@ -15,7 +15,7 @@ function PageHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <h1 className="text-4xl font-bold mb-4">サービス・事業内容</h1>
         <p className="text-white/80 text-lg">
-          金属加工のあらゆるニーズにお応えします
+          航空宇宙・医療機器向け精密部品加工のあらゆるニーズにお応えします
         </p>
       </div>
     </section>

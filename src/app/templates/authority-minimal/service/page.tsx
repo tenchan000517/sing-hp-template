@@ -13,16 +13,16 @@ export default function ServicePage() {
                 <div className="bg-[var(--color-primary)] text-white py-20">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl font-bold mb-4">サービス・事業内容</h1>
-                        <p className="opacity-80">創業52年の確かな技術と信頼</p>
+                        <p className="opacity-80">DX戦略から実行まで、一気通貫で支援</p>
                     </div>
                 </div>
 
                 <div className="container mx-auto px-6 py-16 space-y-24">
                     {/* Section 1: Overview */}
                     <section className="bg-white p-10 md:p-16 rounded-sm shadow-sm max-w-5xl mx-auto">
-                        <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-8">三河精密の加工技術</h2>
+                        <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-8">テックフロンティアの支援領域</h2>
                         <p className="text-lg text-gray-700 leading-loose">
-                            NC旋盤、マシニングセンタ、複合加工機。多彩な設備と50年のノウハウで、あらゆる金属加工ニーズにワンストップでお応えします。試作開発から量産まで、お客様の「作りたい」をカタチにします。
+                            DX戦略策定、システム開発支援、AI/データ活用。大手コンサルファーム出身者とテック人材が連携し、構想から実行まで一気通貫で伴走します。「戦略を描いて終わり」ではなく、実際に成果が出るまで責任を持つ。それがテックフロンティアの強みです。
                         </p>
                     </section>
 
@@ -45,7 +45,7 @@ export default function ServicePage() {
 
                     {/* Section 3: Quality Flow */}
                     <section className="max-w-6xl mx-auto">
-                        <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-12 border-l-4 border-[var(--color-accent)] pl-4">不良品ゼロへの挑戦</h2>
+                        <h2 className="text-2xl font-bold text-[var(--color-primary)] mb-12 border-l-4 border-[var(--color-accent)] pl-4">支援アプローチ</h2>
 
                         <div className="grid md:grid-cols-4 gap-8">
                             {qualityFlow.map((flow, index) => (
@@ -63,15 +63,15 @@ export default function ServicePage() {
                         <div className="mt-12 bg-white p-8 md:flex gap-8 items-center border-l-4 border-[var(--color-accent)]">
                             <div className="w-full md:w-1/3 aspect-video relative shrink-0 overflow-hidden">
                                 <Image
-                                    src="/images/templates/authority-minimal/equip-cmm.jpg"
-                                    alt="三次元測定機"
+                                    src="/images/templates/authority-minimal/team-consulting.jpg"
+                                    alt="コンサルティングチーム"
                                     fill
                                     className="object-cover"
                                 />
                             </div>
                             <div>
-                                <h4 className="font-bold text-lg mb-2 text-[var(--color-primary)]">三次元測定機による徹底した品質管理</h4>
-                                <p className="text-gray-600">最新の三次元測定機を導入し、複雑な形状の部品も正確に測定。データに基づいた品質保証体制を確立しています。</p>
+                                <h4 className="font-bold text-lg mb-2 text-[var(--color-primary)]">コンサル×エンジニアの一体型チーム</h4>
+                                <p className="text-gray-600">戦略コンサルタントとエンジニアが同じチームで動くから、実現可能性の高い提案ができる。構想と実行の間のギャップを埋めます。</p>
                             </div>
                         </div>
                     </section>

@@ -67,11 +67,11 @@ export default function RecruitPage() {
                         <div className="bg-white p-12 max-w-3xl mx-auto border-t-4 border-[var(--color-accent)]">
                             <h2 className="text-2xl font-serif font-bold mb-6">「まずは話を聞いてみたい」でもOKです。</h2>
                             <p className="text-gray-600 mb-8 leading-relaxed">
-                                工場見学やカジュアルな面談も随時受け付けています。<br />
-                                履歴書なしで、まずは工場の雰囲気を見に来てください。
+                                オフィス見学やカジュアルな面談も随時受け付けています。<br />
+                                履歴書なしで、まずはオフィスの雰囲気を見に来てください。
                             </p>
                             <Link href="/templates/recruit-magazine/entry" className="inline-block border-2 border-[var(--color-primary)] text-[var(--color-primary)] px-10 py-3 font-bold hover:bg-[var(--color-primary)] hover:text-white transition-colors">
-                                工場見学に申し込む
+                                カジュアル面談に申し込む
                             </Link>
                         </div>
                     </div>

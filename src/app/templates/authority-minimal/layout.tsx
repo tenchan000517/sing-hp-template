@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import BackToTopBar from "@/components/common/BackToTopBar";
 
 export const metadata: Metadata = {
-    title: "三河精密工業株式会社 | 精密金属部品加工",
-    description: "愛知県岡崎市の精密金属部品加工。NC旋盤・マシニング複合加工。±0.005mmの超精密加工と最短3日の特急対応。",
+    title: "株式会社テックフロンティア | DX戦略コンサルティング",
+    description: "DX戦略策定から実行支援まで一気通貫。大手コンサル出身者が直接担当。製造、金融、小売、医療など累計150社以上の支援実績。",
 };
 
 export default function AuthorityMinimalLayout({
