@@ -25,44 +25,46 @@ export default function EquipmentPage() {
                             '/images/templates/authority-minimal/equip-cmm.jpg'
                         ];
                         return (
-                        <section key={index} className="flex flex-col md:flex-row gap-12 items-center bg-white p-8 md:p-12 rounded-sm shadow-sm md:odd:flex-row-reverse">
-                            {/* Image Area */}
-                            <div className="w-full md:w-1/2 aspect-video relative group overflow-hidden">
-                                <Image
-                                    src={equipmentImages[index % equipmentImages.length]}
-                                    alt={equip.category}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-
-                            {/* Text Area */}
-                            <div className="w-full md:w-1/2">
-                                <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-6 border-b-2 border-[var(--color-accent)] inline-block pb-2">
-                                    {equip.category}
-                                </h2>
-
-                                <div className="space-y-6 text-gray-700">
-                                    {equip.count > 0 && (
-                                        <div className="flex items-center justify-between border-b border-gray-100 pb-2">
-                                            <span className="font-bold">メンバー数</span>
-                                            <span className="text-2xl font-bold text-[var(--color-primary)]">{equip.count} <span className="text-sm font-normal text-gray-500">名</span></span>
-                                        </div>
-                                    )}
-
-                                    <div>
-                                        <p className="font-bold mb-2 text-sm text-gray-500 uppercase tracking-widest">専門領域</p>
-                                        <p className="text-lg font-medium">{equip.models}</p>
-                                    </div>
-
-                                    {equip.description && (
-                                        <p className="text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-sm text-sm">
-                                            {equip.description}
-                                        </p>
-                                    )}
+                            <section key={index} className="flex flex-col md:flex-row gap-12 items-center bg-white p-8 md:p-12 rounded-sm shadow-sm md:odd:flex-row-reverse">
+                                {/* Image Area */}
+                                <div className="w-full md:w-1/2 aspect-video relative group overflow-hidden">
+                                    <Image
+                                        src={equipmentImages[index % equipmentImages.length]}
+                                        alt={equip.category}
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
-                            </div>
-                        </section>
+
+                                {/* Text Area */}
+                                <div className="w-full md:w-1/2">
+                                    <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-6 border-b-2 border-[var(--color-accent)] inline-block pb-2">
+                                        {equip.category}
+                                    </h2>
+
+                                    <div className="space-y-6 text-gray-700">
+                                        {equip.count !== undefined && equip.count > 0 && (
+                                            <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                                                <span className="font-bold">メンバー数</span>
+                                                <span className="text-2xl font-bold text-[var(--color-primary)]">
+                                                    {equip.count} <span className="text-sm font-normal text-gray-500">名</span>
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        <div>
+                                            <p className="font-bold mb-2 text-sm text-gray-500 uppercase tracking-widest">専門領域</p>
+                                            <p className="text-lg font-medium">{equip.models}</p>
+                                        </div>
+
+                                        {equip.description && (
+                                            <p className="text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-sm text-sm">
+                                                {equip.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+                            </section>
                         );
                     })}
 
