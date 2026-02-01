@@ -96,6 +96,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -106,6 +107,7 @@ html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -166,11 +168,9 @@ html {
 
 /* Overlay for hero images */
 .hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.5)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5));
 }
 
 /* Data-Driven Template Theme */
@@ -255,8 +255,15 @@ html {
 
 /* Stat Number Animation */
 @keyframes statPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
 }
 
 .stat-number {
@@ -318,11 +325,9 @@ html {
 
 /* Visual Template Specific Styles */
 .visual-hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.4)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4));
 }
 
 /* Masonry Grid */
@@ -450,4 +455,52 @@ html {
   padding: 1.5rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: white;
+}
+
+/* Authority Minimal Template Theme */
+[data-template="authority-minimal"] {
+  --color-primary: #1A2B4C;
+  --color-primary-light: #2A4270;
+  --color-primary-dark: #0D192E;
+  --color-accent: #00B5E2;
+  --color-accent-light: #33C9EB;
+  --color-bg-secondary: #F5F7FA;
+}
+
+[data-template="authority-minimal"] ::selection {
+  background-color: #1A2B4C;
+}
+
+[data-template="authority-minimal"] ::-webkit-scrollbar-thumb {
+  background: #1A2B4C;
+}
+
+
+[data-template="authority-minimal"] ::-webkit-scrollbar-thumb:hover {
+  background: #0D192E;
+}
+
+/* LeadGen Minimal Template Theme */
+[data-template="leadgen-minimal"] {
+  --color-primary: #1A2B4C;
+  /* Deep Navy */
+  --color-primary-light: #2A4270;
+  --color-primary-dark: #0D192E;
+  --color-accent: #00B5E2;
+  /* Bright Cyan */
+  --color-accent-light: #33C9EB;
+  --color-bg-secondary: #F8F9FA;
+}
+
+[data-template="leadgen-minimal"] ::selection {
+  background-color: #1A2B4C;
+  color: white;
+}
+
+[data-template="leadgen-minimal"] ::-webkit-scrollbar-thumb {
+  background: #1A2B4C;
+}
+
+[data-template="leadgen-minimal"] ::-webkit-scrollbar-thumb:hover {
+  background: #0D192E;
 }

@@ -41,6 +41,26 @@ export const animations = {
 } as const;
 
 export const navigation = {
+  storyType: [
+    { href: "/templates/story-type", label: "HOME" },
+    { href: "/templates/story-type/about", label: "About" },
+    { href: "/templates/story-type/service", label: "Service" },
+    { href: "/templates/story-type/recruit", label: "Recruit" },
+    { href: "/templates/story-type/contact", label: "Contact" },
+  ],
+  dataDriven: [
+    { href: "/templates/data-driven", label: "HOME" },
+    { href: "/templates/data-driven/chart", label: "Data" },
+    { href: "/templates/data-driven/recruit", label: "Recruit" },
+  ],
+  visual: [
+    { href: "/templates/visual", label: "HOME" },
+    { href: "/templates/visual/gallery", label: "Gallery" },
+  ],
+  qaType: [
+    { href: "/templates/qa-type", label: "HOME" },
+    { href: "/templates/qa-type/qa", label: "Q&A" },
+  ],
   standard: [
     { href: "/templates/standard", label: "HOME" },
     { href: "/templates/standard/about", label: "会社概要" },

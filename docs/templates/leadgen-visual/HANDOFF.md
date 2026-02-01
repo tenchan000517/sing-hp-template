@@ -5,7 +5,8 @@
 | 項目 | 説明 |
 |------|------|
 | 企業名 | 三河精密工業株式会社 |
-| ディレクトリ | `src/app/templates/leadgen-visual` (新規作成想定) |
+| ディレクトリ | `src/app/templates/leadgen-visual` |
+| リポジトリ | `https://github.com/tenchan000517/template-leadgen-visual.git` (クローン元) |
 | 作成日 | 2026/02/01 |
 | テンプレート | leadgen-visual (ビジュアルインパクト重視モデル) |
 

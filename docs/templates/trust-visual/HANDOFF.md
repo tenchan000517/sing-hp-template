@@ -5,7 +5,8 @@
 | 項目 | 説明 |
 |------|------|
 | 事務所名 | あおぞら法律事務所 (Aozora Law Office) |
-| ディレクトリ | `src/app/templates/trust-visual` (新規作成想定) |
+| ディレクトリ | `src/app/templates/trust-visual` |
+| リポジトリ | `https://github.com/tenchan000517/template-trust-visual.git` (クローン元) |
 | 作成日 | 2026/02/01 |
 | テンプレート | trust-visual (信頼構築・士業向けモデル) |
 

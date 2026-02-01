@@ -5,7 +5,8 @@
 | 項目 | 説明 |
 |------|------|
 | 企業名 | 三河精密工業株式会社 |
-| ディレクトリ | `src/app/templates/standard` (新規作成想定) |
+| ディレクトリ | `src/app/templates/standard` |
+| リポジトリ | `https://github.com/tenchan000517/template-standard.git` (クローン元) |
 | 作成日 | 2026/02/01 |
 | テンプレート | standard (法人リード＋採用のバランス型) |
 

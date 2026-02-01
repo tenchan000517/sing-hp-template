@@ -5,7 +5,8 @@
 | 項目 | 説明 |
 |------|------|
 | 企業名 | 三河精密工業株式会社 |
-| ディレクトリ | `src/app/templates/recruit-magazine` (新規作成想定) |
+| ディレクトリ | `src/app/templates/recruit-magazine` |
+| リポジトリ | `https://github.com/tenchan000517/template-recruit-magazine.git` (クローン元) |
 | 作成日 | 2026/02/01 |
 | テンプレート | recruit-magazine (読み物・メディア型採用サイト) |
 
