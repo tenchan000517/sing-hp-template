@@ -8,7 +8,7 @@ export function Header() {
             <div className="container mx-auto px-6 h-full flex justify-between items-center">
                 <Link href="/templates/standard" className="flex items-center gap-2">
                     <span className="text-2xl font-bold text-[var(--color-primary)] tracking-wide">
-                        Mikawa Precision
+                        {company.name}
                     </span>
                 </Link>
 
