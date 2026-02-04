@@ -127,7 +127,7 @@ export const templates = [
     status: "available" as const,
     repo: "template-standard",
     pages: 6,
-    company: "中部建設株式会社",
+    company: "三河精密工業株式会社",
     date: "2026/01/18",
   },
   {
